@@ -1,5 +1,6 @@
 <?php
 
+
 $text_domain = 'ada';
 
 $months["01"] = "Januar";
@@ -24,23 +25,28 @@ $months["12"] = "Dezember";
 3. The Footer, which is a kind of free widgetable footer.
 	It is rendered on all pages. Really, all.
 */
-if ( function_exists('register_sidebar') ){
-    register_sidebar( array(
-        'id'          => 'sidebar',
-        'name'        => __( 'Sidebar', $text_domain ),
-        'description' => __( 'The Main Sidebar', $text_domain ),
-    ) );
-    register_sidebar( array(
-        'id'          => 'homepage',
-        'name'        => __( 'Homepage', $text_domain ),
-        'description' => __( 'The lower Part of the Homepage', $text_domain ),
-    ) );
-    register_sidebar( array(
-        'id'          => 'thefooter',
-        'name'        => __( 'Footer', $text_domain ),
-        'description' => __( 'The Footer of Site', $text_domain ),
-    ) );
-}
+function ada_widgets_init() { 
+	global $text_domain;
+	if ( function_exists('register_sidebar') ){
+    	register_sidebar( array(
+        	'id'          => 'sidebar',
+        	'name'        => __( 'Sidebar', $text_domain ),
+        	'description' => __( 'The Main Sidebar', $text_domain ),
+    		) );
+    	 register_sidebar( array(
+        	'id'          => 'homepage',
+        	'name'        => __( 'Homepage', $text_domain ),
+        	'description' => __( 'The lower Part of the Homepage', $text_domain ),
+    	  ) );
+    	register_sidebar( array(
+        	'id'          => 'thefooter',
+        	'name'        => __( 'Footer', $text_domain ),
+        	'description' => __( 'The Footer of Site', $text_domain ),
+    	) );  
+	} 
+}     
+
+add_action( 'widgets_init', 'ada_widgets_init' );
 
 
 /* Thumbnails, we loves them. */

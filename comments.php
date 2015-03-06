@@ -24,9 +24,12 @@
 	$pingbacks = false;
 	foreach ($comments as $comment) : ?>
 	  <?php if($comment->comment_type !="pingback"){?>
-		<div class="comment" id="comment-<?php comment_ID() ?>">
+		<div class="comment text" id="comment-<?php comment_ID() ?>">
 			<hr/>
-			<p class="metadata"><?php comment_author_link() ?> am <a href="#comment-<?php comment_ID() ?>"><?php comment_date('d. m. Y');?></a><?php edit_comment_link('.','',''); ?></p>
+			<p class="comment-metadata"><?php comment_author_link() ?> am <a href="#comment-<?php comment_ID() ?>"><?php comment_date('d. m. Y');?></a><?php edit_comment_link('.','',''); ?><br/>
+				<?php 
+				  $id_or_email = get_comment_author_email();
+				echo get_avatar( $id_or_email, "41", '', get_comment_author() ); ?></p>
 			<?php comment_text() ?>
 		</div>
 		<!-- end:.comment -->
@@ -43,7 +46,7 @@
 	<h2>Reaktionen</h2>
 	<?php foreach ($comments as $comment) : ?>
 	  <?php if($comment->comment_type =="pingback"){?>
-		<div class="comment" id="comment-<?php comment_ID() ?>">
+		<div class="comment text" id="comment-<?php comment_ID() ?>">
 			<hr/>
 			<p class="metadata"><?php comment_author_link() ?> <a href="#comment-<?php comment_ID() ?>" title=""># <?php edit_comment_link('e','',''); ?></a></p>
 			<?php comment_text() ?>
