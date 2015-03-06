@@ -1,0 +1,246 @@
+body {
+	width:98%;
+}
+
+#footnotes {
+	width:100%;
+}
+
+.post,
+.page-archive h2.pagetitle,
+.box-navigation {
+	margin-left:0px;
+}
+
+
+.box-navigation {
+	width:100%;
+}
+
+.post-full {
+	width:100%;
+}
+
+.region-arena {
+ max-width:529px;
+ margin:auto;
+ 
+ padding:20px;
+}
+
+.post-teaser-big {
+	width:100%;
+	margin-bottom:4em;
+}
+
+.post-teaser-big img {
+	float:none;
+	width:100%;
+	
+}
+
+.post-teaser-big .teaserimage {
+	margin-bottom:0em;
+	text-align:center;
+}
+
+.page-post .teaserimage, 
+.page-page .teaserimage {
+	position:relative;
+	left:0px;
+	top:0px;
+}
+
+.page-post .teaserimage img,
+.page-page .teaserimage img {
+	width:100%;
+}
+
+.post-category-format-photographie .text {
+	width:100%;
+	height:100%;
+	max-width:529px;
+	max-height:529px;
+}
+
+.post-category-format-photographie .text img {
+	max-width:1078px;
+	max-height:1078px;
+	width:200%;
+	height:200%;
+}
+
+.post-category-format-photographie h2 {
+    left: 0px;
+		top: 0px;
+}
+
+.volleBreitseite {
+	width:100%;
+	margin-left:0px;
+
+}
+
+.volleBreitseite img{
+	max-width:100%;
+	margin-left:0px;
+
+}
+
+.page-homepage #ressorts {
+	height:100%;
+}
+
+.page-homepage .ressort{
+	float:none;
+	margin:auto;
+	width:100%;
+	height:100%;
+	margin-bottom:-90px;
+}
+
+.page-homepage .ressort h3 {
+	width:90%;
+}
+
+.page-homepage .ressort img {
+	width:100%;
+
+}
+
+.page-homepage #destages div {
+	width:100%;
+	display:block;
+}
+
+.page-homepage #destages #sdt,
+.page-homepage #destages #fdt {
+	width:100%;
+	padding-left:0px;
+}
+
+.page-homepage #destages div img {
+	margin-left:0px;
+}
+
+.troika img {
+	width:100%;
+}
+
+.topics{
+	margin:auto;
+	width:100%;
+}
+
+.topic {
+	width:100%;
+	float:none;
+	margin:auto;
+}
+
+.topic.first{
+}
+
+.topic img {
+	width:100%;
+}
+
+.marginalie {
+	float:none;
+	margin-left:0px;
+	max-width:100%;
+}
+
+.glosse {
+	float:none;
+	margin:auto;
+	position:relative;
+	left:0px;
+	max-width:100%;
+}
+
+#uniques {
+	height:auto;
+}
+
+#uniques img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#uniques h2 {
+    width:100%;
+    left:0px;
+		padding-right:0px;
+}
+
+.page-homepage #searchform {
+	margin-left:0px;
+}
+
+
+#teasermosaic {
+}
+
+#teasermosaic a {
+	width:22%;
+	margin-right:4%;
+	margin-bottom:2%;
+}
+
+#teasermosaic a:nth-child(6n+6) {
+    margin-right: 4%;
+}
+
+#teasermosaic a:nth-child(4n+4) {
+    margin-right: 0%;
+}
+
+
+#teasermosaic img {
+	max-width:100%;
+	width:100%;
+}
+
+
+
+#comments {
+	width:100%;
+}
+
+.comment {		
+	margin-left:0px;
+	width:100%;
+}
+
+.comment hr {		
+	width:100%;
+}
+
+.comment .metadata {
+	position:relative;
+	left:0px;
+}
+
+#comment-form,
+#comment-form hr,
+#comment-form h2 {
+	margin-left:0px;
+}
+
+#comment-form textarea {
+	width:100%;	
+}
+
+#comment-form imput {
+	max-width:100%;	
+}
+
+#comment-form label {
+	display:block;
+}
+
+
+#searchform #s {
+	width:50%;
+}

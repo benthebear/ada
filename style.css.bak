@@ -1,0 +1,962 @@
+/*  
+Theme Name: Ada
+Theme URI: http://anmutunddemut.de/
+Description: A minimalistic, containerist, one-collumn Theme for Bloggers named after the magnificent Ada Lovelace.
+Version: 0.2
+Author: Benjamin Birkenhake <benjamin@birkenhake.org>
+Author URI: http://birkenhake.org/
+	
+Have fun, and don't be afraid to contact me if you have questions.
+
+# Basic Structure
+
+The Themes HTML, IDs, Clases and CSS are based on SMACSS: http://smacss.com/.
+It is a one-column Layout based on an 18 Column Grid, with 18 .
+
+20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20
+
+
+Main Classes:
+
+.region- 	– A Region is major Container
+.page- 		– For the general Page-Types like Homepage, Article-Page, Category-Page
+.post-		– Mostly for all types of Post-Representations on the Site, Teasers, as well als full Posts.
+.widget_	– These Classes come from Wordpress own's Naming Convention
+.box-     
+
+
+Globally usable Layoutboxes:
+
+.marginalia             - floats left next to the main-content, 3 columns wide, 1st - 3rd column
+.apostille              - floats right next to the main-content, 5 columns wide, 14th - 18th column
+.broadside         			- 18 columns wide, 1st - 18th column
+.mosaic                 - contains 6 subboxes per row, each 3 columns wide, 18 columns wide at all, 1st - 18th column
+.troika                 - contains 3 subboxes per row, each 6 columns wide, 18 columns wide at all, 1st - 18th column
+.topics                 - contains 2 subboxes per row, each 9 columns wide, 18 columns wide at all, 1st - 18th column
+
+	
+*/
+
+/* ========== At first, set Defaults back to zero ========== */
+ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,table,tr,td,thead,tbody{
+	margin:0px;
+	padding:0px;
+	font-weight:normal;
+	border:0px;
+}
+
+/* Add basic marigins again */
+
+ul, ol, dd{
+	padding-left:2em;
+}
+
+h2, h3, p, ul, ol, dl, table, pre, iframe {
+	margin-bottom:2em;	
+}
+
+
+
+/* Set the basics 100e2r */
+
+html, body, textarea {
+	font:18px/1.45 Georgia, serif;	
+	line-height: 145%;		
+}
+
+html {
+	background:whitesmoke;
+	padding:10px;	
+}
+
+
+body {
+	width:1118px;
+	border:1px solid black;
+	margin:auto;
+	margin-bottom:550px;
+	background:white;
+	box-shadow: 0 0 10px gray;
+	position:relative;
+}
+
+
+a {
+	border:0px;
+	text-decoration:none;
+}
+
+a:hover {text-decoration:underline;}
+
+a:focus {text-decoration:underline;}
+
+a img 	{border:0px; }
+
+
+
+/* Elements within the Continuous Text */
+
+h2 {margin-bottom:0.5em;
+	font-size:35px;
+	line-height:100%;}
+
+h3{	margin-top:3em; 
+	margin-bottom:1em;
+	clear:both;
+	font-size:27px;
+}
+
+h4 {font-weight:bold;}
+
+blockquote {
+	border-left:3px solid black;
+	padding-left:2em;
+}
+
+img {
+	max-width:529px;	
+}
+
+td{
+	padding-left:5px;
+}
+
+hr{
+  border:0;
+  height:3px;
+  color:black;
+  background:black;  
+  text-align:left;
+  margin-top:2em;
+  margin-bottom:2em;
+}
+
+.text code {font-size:16px;}
+
+
+
+
+
+
+/* General Layout */
+
+/* As the theme has general Containeris-Layout 
+   (Boxes of the same Size stacked upon each other), 
+   the main Regions don't need to be put next to eachother 
+*/
+
+.region {
+	margin:0px;
+	padding:0px;
+}
+
+.region-header {	
+	width:100%;
+	color:white;
+	background:black;	
+	height:30px;
+	padding-top:5px;
+}
+
+.region-arena, 
+.region-sidebar {	
+	margin:20px 20px 0px 20px;
+}
+
+.region-footer {	
+  clear:both;	
+  margin:0px 20px 0px 20px;
+}
+
+.clear {clear:both;}
+
+.text {
+	
+}
+
+
+
+
+/* Subregion inside the Arena   */
+
+.post {
+	margin-left:183px;
+}
+
+.post h2,
+#comments h2 {
+  margin-bottom:2em;  
+}
+
+.post,
+#footnotes,
+#comments {
+	margin-bottom:2em;
+}
+
+
+
+
+
+/* Header */
+
+header a{
+	color:white;	
+}
+
+header h1{
+	padding-left:20px;	
+}
+
+header h1, 
+header p{
+	display:inline;
+	font-size:16px;	
+}
+
+header h1 {
+	margin-left:2px;
+}
+
+header p{
+  position:absolute;
+  right:20px;
+  margin-right:20px;	
+  padding-left:175px;
+}
+
+#pagination {
+	position:absolute;
+	top:5px;
+	right:100px;
+
+}
+
+#pagination a {
+	color:white;
+}
+
+
+
+
+/* Footer */
+
+#buttons {
+  text-align:right; 
+}
+
+#buttons img{
+ 	margin-left:16px;
+	width:163px;
+}
+
+#digitalistbesser, #impressum{	
+	text-transform:uppercase;
+}
+
+#digitalistbesser{	
+	float:right;	
+}
+
+
+
+/* Homepage */
+
+
+.readmore{
+	margin-top:-1em;
+	text-align:right;
+}
+
+.page-homepage #searchboxhome {
+	margin-top:0em;
+}
+
+
+
+/* Topics */
+
+.topics {
+	margin-left:-184px;
+	width:1078px;
+}
+
+.topic{
+	width:529px;
+
+}
+
+.topic.first{
+	float:left;
+	clear:both;
+}
+
+.topic.second{
+	float:right;
+	margin-left:20px;
+}
+
+.topic img{
+	width:529px;
+
+}
+
+.topic h3{
+	font-size:150%;
+	margin-top:0em;
+}
+
+
+
+
+
+/* Blogroll */
+
+.page-homepage #blogroll {
+	min-height:200px;
+}
+
+.page-homepage #blogroll li{
+	float:left;
+	margin-left:25px;
+}
+
+
+
+
+.node .content p {
+	margin-bottom:0px;
+}
+
+.node .content .readmore {
+	margin-top:1em;
+}
+
+.box-navigation {
+	margin:4em 0 4em 183px;
+	font-size:24px;
+	width:712px;
+}
+
+
+.box-navigation a:nth-child(2){
+	float:right;
+}
+
+.module-archive-navigation {
+	margin-left:62px; margin-bottom:10px; 
+}
+
+.module-archive-navigation 
+
+.module-archive-navigation-yearly {
+	font-size:23px;
+}
+
+.module-archive-navigation-monthly {
+	font-size:19px;
+}
+
+.module-archive-navigation-daily {
+	
+}
+
+.module-archive-navigation-daily a{
+	padding:0 0.5px;
+	
+}
+
+
+/* Search */
+
+#searchform {
+	margin-bottom:50px;
+	margin-top:50px;
+}
+
+#searchform input{
+	font-family:Georgia;
+	font-size:150%;
+	font-style:italic;	
+	border:1px solid black;
+}
+
+#searchform #s{
+	width:560px;
+}
+
+.page-homepage #searchform{
+	margin-left:163px;
+}
+
+.page-search #arena form,
+.page-search #arena ol{
+	margin-left:163px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Small Teaser  */
+
+.list-teasers {
+	list-style-type:none;
+	padding-left:0px;
+}
+
+li.post-list{
+	clear:both;
+	list-style-type:none;
+	min-height:102px;
+}
+
+.post-list .teaserimage img {
+	width:102px;
+	float:left;
+	border:1px solid gray;
+	margin-right:20px;
+}
+
+.page-archive h2,
+.page-search h2 {
+	margin-bottom:0px;
+}
+
+.post-teaser {
+	width:529px;	
+}
+
+
+
+/* Big Teaser*/
+
+
+.post-teaser-big {
+	clear:both;
+	width:712px;
+	margin-bottom:0em;
+}
+
+.post-teaser-big img {
+	width:162px;
+	float:left;
+	border:1px solid lightgrey;
+	margin-right:20px;
+}
+
+.post-teaser-big h2 {
+	margin-bottom:0.5em;
+}
+
+.post-teaser-big .metadata {
+	color:gray;
+	font-style:italic;
+	margin-bottom:0px;
+	text-align:right;
+	
+}
+
+.post-teaser-big .metadata a {
+	color:gray;
+}
+
+.post-teaser-big hr {
+	visibility:hidden;
+	margin:0px;
+}
+
+.post-teaser-big .text p {
+	margin-bottom:0em;
+}
+
+
+
+
+/* Mosaic */
+
+#teasermosaic{
+
+}
+
+#teasermosaic a {
+	display:block;
+	float: left;
+	margin-right: 20px;
+	margin-bottom:13px;
+}
+
+#teasermosaic a:nth-child(6n+6) {
+	margin-right:0px;	
+}
+
+#teasermosaic img {
+	width:161px;
+	border:1px solid lightgrey;
+}
+
+
+
+/* Archives */
+
+.page-archive h2.pagetitle {
+	margin-left:185px;
+	margin-bottom:2em;
+}
+
+
+
+
+
+/* Article  */
+
+.post-full {
+	clear:both;
+	width:529px;	
+	margin-left:184px;
+	margin-bottom:2em;	
+	
+}
+
+.with-teaserimage {
+	min-height:350px;
+}
+
+.page-post .teaserimage,
+.page-page .teaserimage {	
+	position:absolute;
+	left:813px;
+	top:55px;
+}
+
+.page-post .teaserimage img,
+.page-page .teaserimage img{
+	width:286px;
+}
+
+.broadside{
+	margin-left:-184px;
+	margin-top:-13px;
+	width:1078px;
+} 
+
+.broadside img{
+	max-width:1078px;
+	max-height:1078px;
+}
+
+.volleHoehe img{
+	max-height:1078px;
+}
+
+.marginalia{
+	margin-left:-184px;
+	float:left;
+	clear:left;
+	width:164px;
+}
+
+.marginalia img{
+	max-width: 163px;
+}
+
+.marginalian-absatz{
+	min-height:163px;
+}
+
+.apostille{
+	position:absolute;
+	left:813px;	
+	max-width:286px;
+}
+
+.apostille img{
+	max-width:286px;
+}
+
+.mosaic {
+	margin-left:-184px;
+	width:1078px;
+}
+
+.mosaic > * {
+	float:left;
+	width:163px;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.mosaic img {
+	width:163px;
+}
+
+.mosaic > *:nth-child(6n+6){
+	margin-right:0px;
+}
+
+
+.moblog-teaser img{
+	max-height:250px;
+	max-width:250px;
+}
+
+.halbeSpalte{
+  width:45%;
+}
+
+.linkeSpalte{ 
+  clear:both;
+  float:left;
+}
+.rechteSpalte{
+  float:right;
+}
+
+.troika img{
+	
+	width:346px;
+}
+
+.troika > * {
+	margin-right:15px;
+}
+
+.troika > *:nth-child(3n+3){
+	margin-right:0px;
+}
+
+.troika .last {
+	margin-right:0px;
+	padding-right:0px;
+}
+
+
+
+
+
+/* Category */
+
+
+.sorttable thead td {
+	cursor: pointer;
+}
+
+
+
+/*  Footnotes  */
+#footnotes {
+	width:1078px;
+	clear:both;
+}	
+
+#footnotes p {
+	margin-bottom:0em;
+}
+
+#mytabs li{
+	display:inline;
+}
+
+
+
+
+/* Sidebar */
+
+.region-sidebar {
+	list-style-type:none;
+}
+
+
+
+
+/* Comments */
+
+#comments {	
+	width:1078px;
+}
+
+#comments h2 {	
+	padding-top:1em;
+	margin-bottom:2em;
+}
+
+.comment {
+	margin-left:183px;
+	margin-bottom:3em;	
+	width:529px;	
+}
+
+.comment .metadata{
+	position:absolute;
+	left:752px;
+}
+
+.comment hr{
+	border:0;
+	height:1px;
+	color:black;
+	background:black;
+	width:895px;	
+}
+
+.comment .submitted{
+	text-align:right;
+	font-style:italic;
+	margin-top:-2em;
+}
+
+.comment img {
+	max-width:529px;
+}
+
+
+
+
+/* Comments Form */
+
+#comment-form {
+	margin-left:183px;
+}
+
+#comment-form #userdata{
+	
+}
+
+#comment-form hr{
+	margin-left:-183px;
+}
+
+#comment-form h2{
+	margin-top:1em;
+	margin-bottom:1em;
+	margin-left:-183px;
+}
+
+#comment-form p,
+#comment-form h2{
+	margin-bottom:15px;
+}
+
+#comment-form span {
+	font-style:italic;
+}
+
+#comment-form input{
+	font-family:Georgia;
+	font-size:18px;
+}
+
+#comment-form #submit{
+	left:0px;
+	margin-top:1em;
+	margin-bottom:2em;
+	position:relative;
+}
+
+#comment-form textarea{
+	width:529px;
+	height:350px;
+}
+
+
+
+
+/* The Grid */
+
+#grid hr{
+	clear:both;
+	border:white;
+}
+
+#grid .region {
+	width:100%;
+	border:1px solid lightgray;
+	margin:5px 0 5px 0;
+	padding:5px;
+}
+
+#grid .region-no-1 {
+	width:692px;
+	min-width:692px;
+	float:left;
+}
+
+#grid .region-no-1 img{
+	max-width:163px;
+	padding:0 20px 20px 0;
+	float:left;
+}
+
+#grid .region-no-2 {
+	width:326px;
+	min-width:326px;
+	float:right;
+}
+
+#grid .region-no-2 img{
+	max-width:285px;
+}
+
+
+#grid .region-no-3 {
+	clear:both;
+}
+
+#grid .region-no-3 img{
+	max-width:285px;
+}
+
+
+#grid .container {
+	border:1px solid gray;
+	margin:10px 0 10px 0;
+	padding:5px;
+	background:white;
+}
+
+#grid .region-no-3 .container-no-1 li {
+	display:inline;
+}
+
+#grid .ui-sortable-helper {
+	width:300px !important;
+}
+
+
+#grid .ui-sortable-helper ime {
+	max-width:102px !important;
+}
+
+#grid .hr {
+	color:gray;
+	clear:both;
+}
+
+
+/* Global CSS Classes which should apply to all Themes*/
+
+
+.pause {
+  margin-top:5em !important;
+}
+
+.onespace {
+	margin-left:1em;
+}
+
+.twospace {
+	margin-left:2em;
+}
+
+.threespace {
+	margin-left:3em;
+}
+
+.hidden {
+	visibility:hidden;
+}
+
+
+
+
+
+/* Sidbars'n'Widgets */
+
+ul.sidebar {
+	list-style-type:none;
+	margin-left:0px;
+	padding-left:0px;
+}
+
+.widget {
+	clear:both;
+	margin-left:0px;
+	border-top:3px solid black;
+	padding-top:20px;
+	margin-top:20px;
+}
+
+.widget_links {
+	height:200px;
+}
+
+.widget_links ul li {
+	float:left;
+	margin-left:25px;
+}
+
+.widget_recent_comments
+
+.widget_recent_comments ul {
+	padding-left:56px;
+}
+
+
+.widget_archive ul li {
+	width:185px;
+	float:left;
+}
+
+.widget_search {
+	text-align:center;
+}
+
+.widget_search label{
+	display:none;
+	
+}
+
+.widget-text-archive {
+	text-align:center;
+	font-size:24px;
+}
+
+.widget_quote blockquote,
+.widget_quote p {
+	font-size:42px;
+	color:lightgray;
+	margin-top:2em;	
+	border-left: 0px;
+	padding-left: 186px;
+	line-height:140%;
+}
+
+.widget_quote blockquote p {
+	padding-left:0px;
+}
+
+.widget_quote p:nth-last-child(1) {
+	font-style:italic;
+	font-size:32px;
+}
+
+.widget_quote blockquote p:nth-last-child(1) {
+	font-style:normal;
+	font-size:42px;
+}
+
+
+
+/* My own Clickcounter */
+#countings {
+	display:none;
+}
+
+
+
+
+/* Wordpress Subscription Manager */
+
+.subscription-manager {
+	margin:20px 0 20px 185px;
+	width:529px;
+}
+
+
+
+
