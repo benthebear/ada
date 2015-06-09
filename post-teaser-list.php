@@ -1,4 +1,4 @@
-<li class="post post-list" id="post-<?php the_ID(); ?>">
+<li id="post-<?php the_ID(); ?>" <?php post_class('post post-list'); ?>>
   <?php 
 	if(has_post_thumbnail()){
 		$thumbnail_tag = get_the_post_thumbnail(get_the_ID());

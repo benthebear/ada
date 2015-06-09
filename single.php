@@ -1,6 +1,6 @@
-<?php get_header();   ?>
+ <?php get_header();   ?>
 
-  <div class="region region-arena page-post">
+  <div id="post-<?php the_ID(); ?>" <?php post_class("region region-arena page-post"); ?>>
 		
   	<div class="pagination">
   		<?php previous_post_link('<span class="meta-back">%link</span>', '«') ?>
@@ -20,6 +20,8 @@
 			}	?>
 			
 			<?php the_content( __( 'Continue reading &#187;', 'ada' ) ); ?>
+			<?php wp_link_pages(); ?> 
+
 	 </div>
 
 		
