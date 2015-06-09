@@ -32,7 +32,7 @@
   	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   
   	<!-- start:navigation -->
-  	<link rel="home" href="<?php echo get_option('home'); ?>" />
+  	<link rel="home" href="<?php echo home_url(); ?>" />
   	<link rel="index" href="" />
   	<link rel="glossary" href="" />
   	<link rel="copyright" href="" />
