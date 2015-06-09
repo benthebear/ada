@@ -17,6 +17,16 @@ $months["11"] = "November";
 $months["12"] = "Dezember";
 
 
+/* Set the Content Width (for desktop only, of course) */
+if ( ! isset( $content_width ) ){ 
+	$content_width = 1078;
+}
+
+/* Enqueue the Comment-Reply Script */
+if ( is_singular() ) {
+	wp_enqueue_script( "comment-reply" ); 
+}
+
 /*Ada delivers three Sidebars:
 1. The Regular Sidebar, which, actually is no sidebar, sorry. 
 	It's rendered below the main Content and above the Footer.
@@ -82,7 +92,7 @@ function ada_get_url(){
 
 function ada_get_permalink($post){
 	if($post["post_type"]=='page'){
-		$permalink = get_option('home')."/".$post["post_name"];
+		$permalink = home_url()."/".$post["post_name"];
 		return $permalink;
 		
 	}else{
