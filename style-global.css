@@ -75,6 +75,9 @@ Globally usable Layoutboxes:
 	display:none;
 }
 
+.widget {
+	clear:both;
+}
 
 /*--------------------------------------------------------------
 # Typography
@@ -346,27 +349,3 @@ blockquote {
 }
 
 
-/*--------------------------------------------------------------
-# Mosaic
---------------------------------------------------------------*/
-
-
-.mosaic > * {
-	width:44%;
-	height:auto;
-	overflow:hidden;
-	display:block;
-	float:left;
-	margin-right:20px;
-	margin-bottom:13px;
-}
-
-.mosaic > *:nth-child(2n+2) {
-	margin-right:0px;	
-}
-
-.mosaic img {
-	width:95%;
-	border:1px solid #808080;
-	
-}

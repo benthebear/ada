@@ -64,8 +64,39 @@ html, body, textarea {
 # Singulars
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Repeating Visual Patterns 
+--------------------------------------------------------------*/
 
 
+/*--------------------------------------------------------------
+# Mosaic
+--------------------------------------------------------------*/
+
+.mosaic {
+	text-align: center;
+	margin:auto;
+}
+
+.mosaic > * {
+	width:161px;
+	height:auto;
+	overflow:hidden;
+	display:block;
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.mosaic > *:nth-child(2n+2) {
+	margin-right:0px;	
+}
+
+.mosaic img {
+	width:95%;
+	border:1px solid #808080;
+	
+}
 
 
 

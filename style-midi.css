@@ -30,10 +30,6 @@ html, body, textarea {
 }
 
 .mosaic > *:nth-child(3n+3) {
-	margin-right:20px;	
-}
-
-.mosaic > *:nth-child(4n+4) {
 	margin-right:0px;	
 }
 

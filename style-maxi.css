@@ -130,20 +130,17 @@ html, body, textarea {
 ## Mosaic
 --------------------------------------------------------------*/
 
-.mosaic > * {
-	width:163px;
-	height:163px;
-	overflow:hidden;
-	display:block;
-	float:left;
-	margin-right:20px;
-	margin-bottom:20px;
-}
-
 .mosaic > *:nth-child(2n+2) {
 	margin-right:20px;	
 }
 
+.mosaic > *:nth-child(3n+3) {
+	margin-right:20px;	
+}
+
+.mosaic > *:nth-child(4n+4) {
+	margin-right:20px;	
+}
 
 .mosaic > *:nth-child(6n+6) {
 	margin-right:0px;	

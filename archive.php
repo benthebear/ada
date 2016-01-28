@@ -50,6 +50,10 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	
+	<aside class="widget-area widget-area-archive" role="complementary">
+	<?php dynamic_sidebar( 'thearchives' ); ?>
+	</aside>
 
 <?php
 get_sidebar();

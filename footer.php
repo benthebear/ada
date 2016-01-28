@@ -16,6 +16,9 @@
 	<hr/>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<aside class="widget-area widget-area-footer" role="complementary">
+		<?php dynamic_sidebar( 'thefooter' ); ?>
+		</aside>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ada' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'ada' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

@@ -96,14 +96,41 @@ add_action( 'after_setup_theme', 'ada_content_width', 0 );
  */
 function ada_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ada' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'id'          => 'homepage',
+        'name'        => __( 'Homepage', 'ada' ),
+        'description' => __( 'The lower Part of the Homepage', 'ada' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+    ) );
+    register_sidebar( array(
+        'id'          => 'thefooter',
+        'name'        => __( 'Footer', $text_domain ),
+        'description' => __( 'The Footer of Site - on every Page', 'ada' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'id'          => 'thearticle',
+        'name'        => __( 'Article', 'ada' ),
+        'description' => __( 'The lower Part of Posts of all Types', 'ada' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'id'          => 'thearchives',
+        'name'        => __( 'Archives', 'ada' ),
+        'description' => __( 'The lower Part of Archices of all Types', 'ada' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', 'ada_widgets_init' );
 
@@ -114,7 +141,8 @@ function ada_enscripts() {
 	wp_enqueue_style( 'ada-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'ada-global', get_template_directory_uri() . '/style-global.css');
 	wp_enqueue_style( 'ada-mini', get_template_directory_uri() . '/style-mini.css');
-	wp_enqueue_style( 'ada-medi', get_template_directory_uri() . '/style-medi.css', array(), false, "screen and (min-width: 601px)");
+	wp_enqueue_style( 'ada-midi', get_template_directory_uri() . '/style-midi.css', array(), false, "screen and (min-width: 601px)");
+	wp_enqueue_style( 'ada-medi', get_template_directory_uri() . '/style-medi.css', array(), false, "screen and (min-width: 778px)");
 	wp_enqueue_style( 'ada-maxi', get_template_directory_uri() . '/style-maxi.css', array(), false, "screen and (min-width: 1137px)");
 	
 

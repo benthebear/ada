@@ -55,6 +55,10 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	
+	<aside class="widget-area widget-area-homepage" role="complementary">
+	<?php dynamic_sidebar( 'homepage' ); ?>
+	</aside>
 
 <?php
 get_sidebar();
