@@ -1,12 +1,7 @@
 /* For smallest Devices, like Smartphones */
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
 
-html, body, textarea {
-	font-size:16px;	
-}
+
 
 
 /*--------------------------------------------------------------
@@ -18,84 +13,12 @@ html, body, textarea {
 	margin-right:20px;
 }
 
-
-/*--------------------------------------------------------------
-# Teasers
---------------------------------------------------------------*/
-
-.teaser-big {
-	margin-bottom:3em;
-}
-
-.teaser h2 {
-	margin-bottom:0.5em;
-	font-size:20px;
-}
-
-.teaser .thumbnail {
+.posts-navigation .nav-previous {
 	float:left;
-	margin-right: 20px;
-	max-width:33%;
 }
 
-.teaser time {
-	display:none;
-}
-
-.teaser .entry-date {
-	display:inline;
-}
-
-.teaser .thumbnail img{
-	border:1px solid gray;
-}
-
-
-/*--------------------------------------------------------------
-# Teaser Big
---------------------------------------------------------------*/
-
-.teaser-big .teaser-text {
-	min-height:130px; 
-}
-
-
-/*--------------------------------------------------------------
-# Singulars
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Repeating Visual Patterns 
---------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------
-# Mosaic
---------------------------------------------------------------*/
-
-.mosaic {
-	text-align: center;
-	margin:auto;
-}
-
-.mosaic > * {
-	width:161px;
-	height:auto;
-	overflow:hidden;
-	display:block;
-	float:left;
-	margin-right:20px;
-	margin-bottom:20px;
-}
-
-.mosaic > *:nth-child(2n+2) {
-	margin-right:0px;	
-}
-
-.mosaic img {
-	width:95%;
-	border:1px solid #808080;
-	
+.posts-navigation .nav-next {
+	float:right;
 }
 
 

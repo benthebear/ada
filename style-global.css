@@ -95,6 +95,13 @@ html, body, textarea {
 h, heading, h1, h2, h3, h4, h5, h5 {
 	font-weight:normal;
 	line-height: 120%;
+	
+}
+
+h1.page-title, h2 {
+	font-family: Verdana, sans-serif;
+	letter-spacing:-2px;
+	font-weight: 900;
 }
 
 img {
@@ -128,9 +135,12 @@ img {
 .site > hr {
 	margin-left:20px;
 	margin-right:20px;
-	
 }
 
+.clear,
+.clearfix {
+	clear:both;	
+}
 
 /*--------------------------------------------------------------
 # Header
@@ -195,14 +205,20 @@ img {
 	max-width:529px;
 }
 
-
-
-
 .nav-next, .nav-previous {
 	margin-top:20px;
 	margin-bottom:20px;
 }
 
+.widget {
+	margin-bottom:40px;
+	clear:both;
+}
+
+.posts-navigation {
+	min-height:40px;
+	margin-bottom:80px;
+}
 
 /*--------------------------------------------------------------
 # Teasers
@@ -213,47 +229,7 @@ img {
 	margin:0px;
 }
 
-.list-of-teasers .teaser:nth-child(1) a {
-	color:purple;
-}
 
-.list-of-teasers .teaser:nth-child(2) a {
-	color:indigo;
-}
-
-
-.list-of-teasers .teaser:nth-child(3) a {
-	color:blue;
-}
-
-.list-of-teasers .teaser:nth-child(4) a {
-	color:deepskyblue;
-}
-
-.list-of-teasers .teaser:nth-child(5) a {
-	color:darkcyan;
-}
-
-
-.list-of-teasers .teaser:nth-child(6) a {
-	color:green;
-}
-
-.list-of-teasers .teaser:nth-child(7) a {
-	color:#f0cb02;
-}
-
-.list-of-teasers .teaser:nth-child(8) a {
-	color:orange;
-}
-
-.list-of-teasers .teaser:nth-child(9) a {
-	color:red;
-}
-
-.list-of-teasers .teaser:nth-child(10) a {
-	color:firebrick;
-}
 
 
 
@@ -316,6 +292,9 @@ blockquote {
 
 .clickme {
 	line-height: 250%;
+	font-family: Verdana, sans-serif;
+	letter-spacing:-1px;
+	font-weight: 900;
 }
 
 .clickme a:before {
@@ -330,11 +309,13 @@ blockquote {
 }
 
 .clickme a {
-	border-color:#0000EE;
+	color:blue;
+	border-color:blue;
 }
 
 .clickme a:visited {
-	border-color:#551A8B;
+	color:purple;
+	border-color: purple;
 }
 
 .clickme a:hover {
@@ -348,4 +329,72 @@ blockquote {
 	display:none;
 }
 
+/*--------------------------------------------------------------
+# Rainbow Warrior
+--------------------------------------------------------------*/
 
+.rainbow-warrior > a:nth-child(1),
+.rainbow-warrior > *:nth-child(1) a {
+	color:purple;
+	border-color:purple;
+}
+
+.rainbow-warrior > a:nth-child(2),
+.rainbow-warrior > *:nth-child(2) a {
+	color:indigo;
+	border-color:indigo;
+}
+
+.rainbow-warrior > a:nth-child(3),
+.rainbow-warrior > *:nth-child(3) a {
+	color:blue;
+	border-color:blue;
+}
+
+.rainbow-warrior > a:nth-child(4),
+.rainbow-warrior > *:nth-child(4) a {
+	color:deepskyblue;
+	border-color:deepskyblue;
+}
+
+.rainbow-warrior > a:nth-child(5),
+.rainbow-warrior > *:nth-child(5) a {
+	color:darkcyan;
+	border-color:darkcyan;
+}
+
+
+.rainbow-warrior > a:nth-child(6),
+.rainbow-warrior > *:nth-child(6) a {
+	color:green;
+	border-color:green;
+}
+
+.rainbow-warrior > a:nth-child(7),
+.rainbow-warrior > *:nth-child(7) a {
+	color:#f0cb02;
+	border-color:#f0cb02;
+}
+
+.rainbow-warrior > a:nth-child(8),
+.rainbow-warrior > *:nth-child(8) a {
+	color:orange;
+	border-color:orange;
+}
+
+.rainbow-warrior > a:nth-child(9),
+.rainbow-warrior > *:nth-child(9) a {
+	color:red;
+	border-color:red;
+}
+
+.rainbow-warrior > a:nth-child(10),
+.rainbow-warrior .teaser:nth-child(10) a {
+	color:firebrick;
+	border-color:firebrick;
+}
+
+.rainbow-warrior > a:hover {
+	border-color:gray;
+	color:black;
+}

@@ -23,6 +23,8 @@ html, body, textarea {
 
 
 
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -41,6 +43,54 @@ html, body, textarea {
 .teaser h2 {
 	margin-bottom:0.5em;
 	font-size:33px;
+}
+
+.rainbow-warrior .teaser {
+	padding-bottom:0px;
+	border-bottom:0px solid white;
+	padding-left:20px;
+	border-left:5px solid black;
+}
+
+.rainbow-warrior > *:nth-child(1)  {
+	border-color:purple;
+}
+
+.rainbow-warrior > *:nth-child(2)  {
+	border-color:indigo;
+}
+
+
+.rainbow-warrior > *:nth-child(3)  {
+	border-color:blue;
+}
+
+.rainbow-warrior > *:nth-child(4)  {
+	border-color:deepskyblue;
+}
+
+.rainbow-warrior > *:nth-child(5)  {
+	border-color:darkcyan;
+}
+
+.rainbow-warrior > *:nth-child(6)  {
+	border-color:green;
+}
+
+.rainbow-warrior > *:nth-child(7)  {
+	border-color:#f0cb02;
+}
+
+.rainbow-warrior > *:nth-child(8)  {
+	border-color:orange;
+}
+
+.rainbow-warrior > *:nth-child(9)  {
+	border-color:red;
+}
+
+.rainbow-warrior > *:nth-child(10) {
+	border-color:firebrick;
 }
 
 

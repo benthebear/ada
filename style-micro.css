@@ -1,0 +1,154 @@
+/* For smallest Devices, like Smartphones */
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+html, body, textarea {
+	font-size:16px;	
+}
+
+
+/*--------------------------------------------------------------
+# Genral Layout
+--------------------------------------------------------------*/
+
+.site-content {
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.posts-navigation .nav-previous,
+.posts-navigation .nav-next {
+	text-align: center;
+
+}
+    
+
+/*--------------------------------------------------------------
+# Teasers
+--------------------------------------------------------------*/
+
+.teaser-big {
+	margin-bottom:3em;
+}
+
+.teaser h2 {
+	margin-bottom:0.5em;
+	font-size:20px;
+}
+
+.teaser .thumbnail {
+	float:left;
+	margin-right: 20px;
+	max-width:33%;
+}
+
+.teaser time {
+	display:none;
+}
+
+.teaser .entry-date {
+	display:inline;
+}
+
+.teaser .thumbnail img{
+	border:1px solid gray;
+}
+
+
+/*--------------------------------------------------------------
+# Teaser Big
+--------------------------------------------------------------*/
+
+.teaser-big .teaser-text {
+	min-height:100px; 
+}
+
+
+/*--------------------------------------------------------------
+# Singulars
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Repeating Visual Patterns 
+--------------------------------------------------------------*/
+
+.rainbow-warrior .teaser {
+	padding-bottom:20px;
+	border-bottom:5px solid black;
+}
+
+.rainbow-warrior > *:nth-child(1)  {
+	border-color:purple;
+}
+
+.rainbow-warrior > *:nth-child(2)  {
+	border-color:indigo;
+}
+
+
+.rainbow-warrior > *:nth-child(3)  {
+	border-color:blue;
+}
+
+.rainbow-warrior > *:nth-child(4)  {
+	border-color:deepskyblue;
+}
+
+.rainbow-warrior > *:nth-child(5)  {
+	border-color:darkcyan;
+}
+
+.rainbow-warrior > *:nth-child(6)  {
+	border-color:green;
+}
+
+.rainbow-warrior > *:nth-child(7)  {
+	border-color:#f0cb02;
+}
+
+.rainbow-warrior > *:nth-child(8)  {
+	border-color:orange;
+}
+
+.rainbow-warrior > *:nth-child(9)  {
+	border-color:red;
+}
+
+.rainbow-warrior > *:nth-child(10) {
+	border-color:firebrick;
+}
+
+
+/*--------------------------------------------------------------
+# Mosaic
+--------------------------------------------------------------*/
+
+.mosaic {
+	text-align: center;
+	margin:auto;
+}
+
+.mosaic > * {
+	width:161px;
+	height:auto;
+	overflow:hidden;
+	display:block;
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.mosaic > *:nth-child(2n+2) {
+	margin-right:0px;	
+}
+
+.mosaic img {
+	width:95%;
+	border:1px solid #808080;
+	
+}
+
+
+

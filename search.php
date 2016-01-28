@@ -19,7 +19,7 @@ get_header(); ?>
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'ada' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<div class="list-of-teasers">
+			<div class="list-of-teasers rainbow-warrior">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -37,6 +37,7 @@ get_header(); ?>
 	
 			print "<div class='clickme'>";
 			the_posts_navigation();
+			print "<div class='clear clearfix'></div>";
 			print "</div>";
 
 

@@ -140,7 +140,8 @@ add_action( 'widgets_init', 'ada_widgets_init' );
 function ada_enscripts() {
 	wp_enqueue_style( 'ada-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'ada-global', get_template_directory_uri() . '/style-global.css');
-	wp_enqueue_style( 'ada-mini', get_template_directory_uri() . '/style-mini.css');
+	wp_enqueue_style( 'ada-micro', get_template_directory_uri() . '/style-micro.css');
+	wp_enqueue_style( 'ada-mini', get_template_directory_uri() . '/style-mini.css', array(), false, "screen and (min-width: 375px)");
 	wp_enqueue_style( 'ada-midi', get_template_directory_uri() . '/style-midi.css', array(), false, "screen and (min-width: 601px)");
 	wp_enqueue_style( 'ada-medi', get_template_directory_uri() . '/style-medi.css', array(), false, "screen and (min-width: 778px)");
 	wp_enqueue_style( 'ada-maxi', get_template_directory_uri() . '/style-maxi.css', array(), false, "screen and (min-width: 1137px)");

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main list-of-teasers" role="main">
+		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<div class="list-of-teasers">
+			<div class="list-of-teasers rainbow-warrior">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -40,6 +40,7 @@ get_header(); ?>
 
 			print "<div class='clickme'>";
 			the_posts_navigation();
+			print "  <div class='clear clearfix'></div>";
 			print "</div>";
 
 		else :

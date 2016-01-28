@@ -48,13 +48,13 @@ function ada_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ' ', 'ada' ) );
 		if ( $categories_list && ada_categorized_blog() ) {
-			printf( '<div class="entry-meta-item cat-links clickme"><span class="tellme">Categories:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+			printf( '<div class="entry-meta-item cat-links clickme rainbow-warrior"><span class="tellme">Categories:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'ada' ) );
 		if ( $tags_list ) {
-			printf( '<div class="entry-meta-item tags-links clickme"><span class="tellme">Tags:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $tags_list ); // WPCS: XSS OK.
+			printf( '<div class="entry-meta-item tags-links clickme rainbow-warrior"><span class="tellme">Tags:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

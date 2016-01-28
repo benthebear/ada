@@ -14,6 +14,18 @@ html, body, textarea {
 }
 
 
+/*--------------------------------------------------------------
+# Genral Layout
+--------------------------------------------------------------*/
+
+
+.posts-navigation .nav-previous {
+	float:left;
+}
+
+.posts-navigation .nav-next {
+	float:right;
+}
 
 /*--------------------------------------------------------------
 # Repeating Visual Patterns 

@@ -28,7 +28,7 @@ get_header(); ?>
 			<?php
 			endif;
 
-			print '<div class="list-of-teasers">';
+			print '<div class="list-of-teasers rainbow-warrior">';
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -45,6 +45,7 @@ get_header(); ?>
 
 			print "<div class='clickme'>";
 			the_posts_navigation();
+			print "<div class='clear clearfix'></div>";
 			print "</div>";
 
 		else :
