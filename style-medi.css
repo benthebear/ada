@@ -1,0 +1,14 @@
+/* For Medium Sized Devices, like Tablet */ 
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+html, body, textarea {
+	font-size:20px;	
+}
+
+.teaser h2 {
+	margin-bottom:0.5em;
+	font-size:26px;
+}

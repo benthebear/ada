@@ -1,0 +1,154 @@
+/* For maximum sized Devices, like Desktops and Television */
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+html, body, textarea {
+	font-size:20px;	
+}
+
+
+/*--------------------------------------------------------------
+# Genral Layout
+--------------------------------------------------------------*/
+
+
+.site {
+	width:1120px;
+	border:1px solid black;
+	margin-top:20px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.page-header {
+	margin-left:20px;
+	margin-right:20px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Teasers
+--------------------------------------------------------------*/
+
+.teaser h2 {
+	margin-bottom:0.5em;
+	font-size:33px;
+}
+
+
+/*--------------------------------------------------------------
+# teaser-big
+--------------------------------------------------------------*/
+
+
+.teaser-big {
+	clear:both;
+	width:712px;
+	margin-bottom:4em;
+	margin-left:182px;
+	min-height:210px;
+}
+
+.teaser-big .teaserimage {
+	float:left;
+	margin-right:20px;
+}
+
+.teaser-big .teaserimage img {
+	border:1px solid lightgray;
+}
+
+.teaser-big .entry-title {
+	margin-bottom: 0.5em;
+}
+
+.teaser-big .teaser-text {
+	min-height:182px; 
+}
+
+
+/*--------------------------------------------------------------
+# Singulars, Single, Post, Pages
+--------------------------------------------------------------*/
+
+
+.singular .content-full .entry-content,
+.singular .content-full .entry-title,
+.singular .comment-list, 
+.singular .comment-respond {
+	width: 529px;
+	margin-left: 184px;
+	padding-left:0;
+}
+
+
+
+
+.singular .content-full .entry-content {
+	min-height:200px;
+}
+
+.singular .content-full .teaserimage {
+	float:right;
+	max-width: 286px;	
+    position: absolute;
+    top: 60px;
+    right: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+
+.comment,
+.pingback {
+	margin-bottom:5em;
+}
+
+
+.comment-meta {
+	position: absolute;
+	margin-left:549px;
+	width:348px;
+}
+
+
+/*--------------------------------------------------------------
+# Repeating Visual Patterns 
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Mosaic
+--------------------------------------------------------------*/
+
+.mosaic > * {
+	width:163px;
+	height:163px;
+	overflow:hidden;
+	display:block;
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.mosaic > *:nth-child(2n+2) {
+	margin-right:20px;	
+}
+
+
+.mosaic > *:nth-child(6n+6) {
+	margin-right:0px;	
+}
+
+.mosaic img {
+	
+}

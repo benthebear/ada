@@ -1,0 +1,372 @@
+/*
+
+Have fun, and don't be afraid to contact me if you have questions.
+
+# Basic Structure
+
+The Themes HTML, IDs, Clases and CSS are based on SMACSS: http://smacss.com/.
+It is a one-column Layout based on an 18 Column Grid, with 18 .
+
+20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20,41,20
+
+Widths of the Colums: 
+ 1 =   41 
+ 2 =  102 
+ 3 =  163 
+ 4 =  224 
+ 5 =  285 
+ 6 =  346 
+ 7 =  407 
+ 8 =  468 
+ 9 =  529 
+10 =  590 
+11 =  651 
+12 =  712 
+13 =  773 
+14 =  834 
+15 =  895 
+16 =  956 
+17 = 1017 
+18 = 1078
+
+Distances from the right: 
+ 1 =   20 
+ 2 =   81 
+ 3 =  142 
+ 4 =  203 
+ 5 =  264 
+ 6 =  325 
+ 7 =  386 
+ 8 =  447 
+ 9 =  508 
+10 =  569 
+11 =  630 
+12 =  691 
+13 =  752 
+14 =  813 
+15 =  874 
+16 =  935 
+17 =  996 
+18 = 1057 
+
+Globally usable Layoutboxes:
+
+.marginalia  - floats left next to the main-content, 3 columns wide, 1st to 3rd column
+.apostille   - floats right next to the main-content, 5 columns wide, 14th to 18th column
+.broadside   - 18 columns wide, 1st - 18th column
+.mosaic      - contains 6 subboxes per row, each 3 columns wide, 18 columns wide at all, 1st - 18th column
+.troika      - contains 3 subboxes per row, each 6 columns wide, 18 columns wide at all, 1st - 18th column
+.topics      - contains 2 subboxes per row, each 9 columns wide, 18 columns wide at all, 1st - 18th column
+
+	
+*/
+
+
+/*--------------------------------------------------------------
+# Fixing Stuff of underscores and WordPress Defaults
+--------------------------------------------------------------*/
+
+
+.screen-reader-text {
+	display: none;
+}
+
+.updated {
+	display:none;
+}
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body {
+	background:lightgray;
+}
+
+html, body, textarea {
+	font-family: Georgia, serif;
+	line-height: 145%;
+}
+
+h, heading, h1, h2, h3, h4, h5, h5 {
+	font-weight:normal;
+	line-height: 120%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Genral Layout
+--------------------------------------------------------------*/
+
+.site {
+	margin:auto;	
+	margin-bottom:50px;
+	background:white;
+	position:relative;
+}
+
+.site-content {
+	margin-top:	20px;
+}
+
+.site-footer {
+	margin-bottom:20px;
+}
+
+.site > hr {
+	margin-left:20px;
+	margin-right:20px;
+	
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+
+.site-header {
+	background:black;
+	color:white;
+	padding-top:4px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:0px;
+	height:35px;
+	font-size:16px;
+}
+
+.site-header a {
+	color:white;
+}
+
+
+.site-header .site-title {
+	margin:0px;
+	display:inline;
+	font-size:16px;
+}
+
+.site-header .navigation,
+.site-header .nav-links,
+.site-header .nav-previous,
+.site-header .nav-next {
+	display:inline;
+}
+
+.site-header .nav-previous,
+.site-header .nav-next {
+	float:none;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+	margin-left: 20px;
+	margin-right:20px;
+}
+
+
+/*--------------------------------------------------------------
+# Global Visual Tools from WordPress Core
+--------------------------------------------------------------*/
+
+
+.nav-menu .page_item {
+	margin-right:20px;
+}
+
+.attachment-post-thumbnail {
+	max-width:529px;
+}
+
+
+
+
+.nav-next, .nav-previous {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+
+/*--------------------------------------------------------------
+# Teasers
+--------------------------------------------------------------*/
+
+.teaserimage {
+	text-align:center;
+	margin:0px;
+}
+
+.list-of-teasers .teaser:nth-child(1) a {
+	color:purple;
+}
+
+.list-of-teasers .teaser:nth-child(2) a {
+	color:indigo;
+}
+
+
+.list-of-teasers .teaser:nth-child(3) a {
+	color:blue;
+}
+
+.list-of-teasers .teaser:nth-child(4) a {
+	color:deepskyblue;
+}
+
+.list-of-teasers .teaser:nth-child(5) a {
+	color:darkcyan;
+}
+
+
+.list-of-teasers .teaser:nth-child(6) a {
+	color:green;
+}
+
+.list-of-teasers .teaser:nth-child(7) a {
+	color:#f0cb02;
+}
+
+.list-of-teasers .teaser:nth-child(8) a {
+	color:orange;
+}
+
+.list-of-teasers .teaser:nth-child(9) a {
+	color:red;
+}
+
+.list-of-teasers .teaser:nth-child(10) a {
+	color:firebrick;
+}
+
+
+
+/*--------------------------------------------------------------
+# Teaser Big
+--------------------------------------------------------------*/
+
+
+.teaser-big {
+	clear:both;
+}
+
+
+/*--------------------------------------------------------------
+# Singulars, Single, Posts, Pages
+--------------------------------------------------------------*/
+
+
+.singular .content-area {
+
+}
+
+
+.singular .entry-content,
+.singular .entry-footer {
+	margin-bottom: 2em;
+}
+
+.singular .comments-area {
+	margin-top:2em;
+}
+
+.singular .entry-footer > div{
+	display:block;
+}
+
+
+/* Mixed Content Elements */
+
+blockquote {
+	border-left:2px solid #CCC;
+	padding-left: 1em;
+}
+
+/* Comments */
+
+.comment-list {
+	list-style-type: none;
+}
+
+
+/*--------------------------------------------------------------
+# Repeating Visual Patterns 
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Clickme Buttons 
+--------------------------------------------------------------*/
+
+.clickme {
+	line-height: 250%;
+}
+
+.clickme a:before {
+	color:black;
+}
+
+.clickme a {
+	border:2px solid black;
+	border-radius: 50px;
+	padding:5px 15px;
+	white-space: nowrap;
+}
+
+.clickme a {
+	border-color:#0000EE;
+}
+
+.clickme a:visited {
+	border-color:#551A8B;
+}
+
+.clickme a:hover {
+	text-decoration: none;
+	background-color:#eee;
+	border-color:gray;
+	color:black;
+}
+
+.tellme {
+	display:none;
+}
+
+
+/*--------------------------------------------------------------
+# Mosaic
+--------------------------------------------------------------*/
+
+
+.mosaic > * {
+	width:44%;
+	height:auto;
+	overflow:hidden;
+	display:block;
+	float:left;
+	margin-right:20px;
+	margin-bottom:13px;
+}
+
+.mosaic > *:nth-child(2n+2) {
+	margin-right:0px;	
+}
+
+.mosaic img {
+	width:95%;
+	border:1px solid #808080;
+	
+}
