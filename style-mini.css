@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* For smallest Devices, like Smartphones */
 
 /*--------------------------------------------------------------
@@ -68,3 +69,29 @@ html, body, textarea {
 
 
 
+=======
+html, body, textarea {
+	font:16px/1.45 Georgia, serif;	
+	line-height: 145%;		
+}
+
+img {max-width:100%;}
+
+#teasermosaic a {
+	width:48%;
+	margin-right:4%;
+	margin-bottom:2%;
+}
+
+#teasermosaic a:nth-child(6n+6) {
+    margin-right: 4%;
+}
+
+#teasermosaic a:nth-child(4n+4) {
+    margin-right: 4%;
+}
+
+#teasermosaic a:nth-child(2n+2) {
+    margin-right: 0%;
+}
+>>>>>>> 90c65fffaeb1b02dd5d2526d1fb0a6c8ec93e557
