@@ -46,15 +46,32 @@ function ada_entry_footer() {
 		ada_posted_on();
 				
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ' ', 'ada' ) );
-		if ( $categories_list && ada_categorized_blog() ) {
-			printf( '<div class="entry-meta-item cat-links clickme rainbow-warrior"><span class="tellme">Categories:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+		$categories = get_the_category();
+		if ( $categories && ada_categorized_blog() ) {
+			$separator = ' ';
+			$output = '';
+			if ( ! empty( $categories ) ) {
+				$output .= '<div class="entry-meta-item cat-links clickme rainbow-warrior">'; 
+			    foreach( $categories as $category ) {
+			        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '"><span class="dashicons dashicons-category"></span>' . esc_html( $category->name ) . '</a>' . $separator;
+			    }
+			    $output .= '</div>';
+			    echo trim( $output, $separator );
+			}
 		}
-
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'ada' ) );
-		if ( $tags_list ) {
-			printf( '<div class="entry-meta-item tags-links clickme rainbow-warrior"><span class="tellme">Tags:</span> ' . esc_html__( '%1$s', 'ada' ) . '</div>', $tags_list ); // WPCS: XSS OK.
+		
+		$tags = get_the_tags();
+		if ( $tags ) {
+			$separator = ' ';
+			$output = '';
+			if ( ! empty( $tags ) ) {
+				$output .= '<div class="entry-meta-item tags-links clickme rainbow-warrior">'; 
+			    foreach( $tags as $tag ) {
+			        $output .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '"><span class="dashicons dashicons-tag"></span>' . esc_html( $tag->name ) . '</a>' . $separator;
+			    }
+			    $output .= '</div>';
+			    echo trim( $output, $separator );
+			}
 		}
 	}
 

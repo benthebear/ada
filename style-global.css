@@ -220,6 +220,25 @@ img {
 	margin-bottom:80px;
 }
 
+.widget_search {
+	
+}
+
+
+.widget_search .search-field {
+	width:64%;
+	border:2px solid black;
+	padding: 5px;
+}
+
+.widget_search .search-submit {
+	width:28%;
+	border:2px solid black;
+	background: white;
+	border-radius: 50px;
+	padding: 5px 15px;
+}
+
 /*--------------------------------------------------------------
 # Teasers
 --------------------------------------------------------------*/
@@ -341,8 +360,8 @@ blockquote {
 
 .rainbow-warrior > a:nth-child(2),
 .rainbow-warrior > *:nth-child(2) a {
-	color:indigo;
-	border-color:indigo;
+	color:DarkViolet;
+	border-color:DarkViolet;
 }
 
 .rainbow-warrior > a:nth-child(3),
@@ -397,4 +416,10 @@ blockquote {
 .rainbow-warrior > a:hover {
 	border-color:gray;
 	color:black;
+}
+
+.clickme .dashicons {
+	padding-top: 0.4em;
+	padding-right: 0.5em;
+	font-size: 130%;
 }

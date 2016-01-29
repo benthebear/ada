@@ -138,6 +138,7 @@ add_action( 'widgets_init', 'ada_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ada_enscripts() {
+	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'ada-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'ada-global', get_template_directory_uri() . '/style-global.css');
 	wp_enqueue_style( 'ada-micro', get_template_directory_uri() . '/style-micro.css');
@@ -145,6 +146,7 @@ function ada_enscripts() {
 	wp_enqueue_style( 'ada-midi', get_template_directory_uri() . '/style-midi.css', array(), false, "screen and (min-width: 601px)");
 	wp_enqueue_style( 'ada-medi', get_template_directory_uri() . '/style-medi.css', array(), false, "screen and (min-width: 778px)");
 	wp_enqueue_style( 'ada-maxi', get_template_directory_uri() . '/style-maxi.css', array(), false, "screen and (min-width: 1137px)");
+
 	
 
 	wp_enqueue_script( 'ada-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
