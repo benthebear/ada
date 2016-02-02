@@ -27,7 +27,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); moblog_get_mails();?>
+<?php wp_footer(); ?>
 
 
 </body>
