@@ -70,6 +70,26 @@ html, body, textarea {
 # Singulars
 --------------------------------------------------------------*/
 
+.singular .byline {
+	margin-bottom: 1em;
+}
+
+.singular .entry-title{
+	max-width: 17.8em;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.singular .content-full .entry-content{
+	max-width: 26.5em;
+	margin:auto;
+}
+
+.singular .comment-list {
+	max-width: 26.5em;
+	margin:auto;
+}
+
 /*--------------------------------------------------------------
 # Repeating Visual Patterns 
 --------------------------------------------------------------*/

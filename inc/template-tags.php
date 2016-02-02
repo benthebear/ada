@@ -29,8 +29,10 @@ function ada_posted_on() {
 		esc_html_x( 'by %s', 'post author', 'ada' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
+	
+	
 
-	echo '<div class="entry-meta-item posted-on byline">' . $posted_on . ' ' . $byline . '</div>'; // WPCS: XSS OK.
+	echo '<div class="entry-meta-item posted-on byline"> '.$posted_on.' ' . $byline . ' </div>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -146,3 +148,70 @@ function ada_teaser_text($content){
 	print $content;
 	
 }
+
+function ada_add_random_variant($string){
+	// First: Check wether theres's Markup inside the Title;
+	if(strpos($string, "<")!== false){
+		return $string;	
+	}else{
+		// Get random Letter
+		$result1 = ada_get_random_letter($string);
+		if(is_array($result1)){
+			$string2 = $result1[2];
+			$result2 = ada_get_random_letter($result1[2]);	
+			if(is_array($result2)){	
+				$string2 = $result2[0]."<span style='color:red'>".$result2[1]."</span>".$result2[2];
+			}
+			$return = $result1[0]."<span style='color:red'>".$result1[1]."</span>".$string2;
+		}else{
+			return $string;
+		}
+		return $return;
+	}
+	return $string;
+}
+
+function ada_get_random_letter($string){
+	//$in = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	$in = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+	$result = array();
+	$hit = false;
+	foreach($in as $letter){
+		if(strpos($string, $letter)>1){
+			$hit = true;
+			break;
+		}
+	}
+	
+	if($hit == false){
+		return $string;
+	}
+
+	if(mb_strpos(" ", $string)>1){
+		$words = explode(" ", $string);
+		foreach($words as $word){
+			$result = ada_get_random_letter($word);
+			if(is_array($result)){
+				return $result;
+			}
+		}
+	}else{
+		if(mb_strpos("&", $string)===false and mb_strpos("<", $string)===false){
+			$randpos = rand(0, mb_strlen($string)-1);		
+			$result[] = mb_substr($string, 0, $randpos);
+			$result[] = mb_substr($string, $randpos, 1);
+			$result[] = mb_substr($string, $randpos+1, mb_strlen($string)-1);
+			if(in_array($result[1], $in)){
+				return $result;
+			}else{
+				return ada_get_random_letter($string);
+			}
+		}else{
+			return $string;
+		}
+	}	
+
+
+	
+}
+

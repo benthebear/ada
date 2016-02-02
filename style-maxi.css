@@ -52,44 +52,44 @@ html, body, textarea {
 	border-left:5px solid black;
 }
 
-.rainbow-warrior > *:nth-child(1)  {
+.rainbow-warrior > *:nth-child(10n+1)  {
 	border-color:purple;
 }
 
-.rainbow-warrior > *:nth-child(2)  {
+.rainbow-warrior > *:nth-child(10n+2)  {
 	border-color:DarkViolet;
 }
 
 
-.rainbow-warrior > *:nth-child(3)  {
+.rainbow-warrior > *:nth-child(10n+3)  {
 	border-color:blue;
 }
 
-.rainbow-warrior > *:nth-child(4)  {
+.rainbow-warrior > *:nth-child(10n+4)  {
 	border-color:deepskyblue;
 }
 
-.rainbow-warrior > *:nth-child(5)  {
+.rainbow-warrior > *:nth-child(10n+5)  {
 	border-color:darkcyan;
 }
 
-.rainbow-warrior > *:nth-child(6)  {
+.rainbow-warrior > *:nth-child(10n+6)  {
 	border-color:green;
 }
 
-.rainbow-warrior > *:nth-child(7)  {
+.rainbow-warrior > *:nth-child(10n+7)  {
 	border-color:#f0cb02;
 }
 
-.rainbow-warrior > *:nth-child(8)  {
+.rainbow-warrior > *:nth-child(10n+8)  {
 	border-color:orange;
 }
 
-.rainbow-warrior > *:nth-child(9)  {
+.rainbow-warrior > *:nth-child(10n+9)  {
 	border-color:red;
 }
 
-.rainbow-warrior > *:nth-child(10) {
+.rainbow-warrior > *:nth-child(10n+10) {
 	border-color:firebrick;
 }
 
@@ -139,11 +139,19 @@ html, body, textarea {
 	padding-left:0;
 }
 
-
-
-
 .singular .content-full .entry-content {
-	min-height:200px;
+	min-height:300px;
+}
+
+.single-format-image .content-full .entry-content {
+	width:1078px;
+	max-width: 1078px;
+	margin-left:0px;
+}
+
+.single-format-image .content-full .entry-content img{
+
+
 }
 
 .singular .content-full .teaserimage {
@@ -153,6 +161,40 @@ html, body, textarea {
     top: 60px;
     right: 20px;
 }
+
+/*--------------------------------------------------------------
+# Singulars, Single, Post, Pages - Marginalia
+--------------------------------------------------------------*/
+
+
+.singular .content-full .marginalia {
+	margin-left:-184px;
+	float:left;
+	clear:left;
+	width:164px;
+}
+
+.singular .content-full .marginalia img {
+	max-width: 163px;
+}
+
+
+/*--------------------------------------------------------------
+# Singulars, Single, Post, Pages - Apostille
+--------------------------------------------------------------*/
+
+
+.singular .content-full .apostille {
+	position:absolute;
+	left:813px;	
+	max-width:286px;
+}
+
+.singular .content-full .apostille img {
+	max-width:286px;
+}
+
+ 
 
 
 /*--------------------------------------------------------------
@@ -175,6 +217,41 @@ html, body, textarea {
 /*--------------------------------------------------------------
 # Repeating Visual Patterns 
 --------------------------------------------------------------*/
+
+/* These Globally usable Layoutboxes need the full width and have to be moved out out the running text column */
+
+.entry-content .broadside,
+.entry-content .topics,
+.entry-content .troika,
+.entry-content .mosaic {    
+	margin-left:-184px;
+	width:1078px;	
+}
+
+/*--------------------------------------------------------------
+## broadside
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+## Troika
+--------------------------------------------------------------*/
+
+.troika {
+
+}
+
+.troika > * {
+	max-width:346px;
+	float:left;
+}
+
+.troika img {
+	max-width:346px;
+	
+}
+
 
 /*--------------------------------------------------------------
 ## Mosaic

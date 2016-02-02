@@ -15,7 +15,7 @@
 	
 	<hr/>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer region region-footer" role="contentinfo">
 		<aside class="widget-area widget-area-footer" role="complementary">
 		<?php dynamic_sidebar( 'thefooter' ); ?>
 		</aside>
@@ -27,7 +27,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php wp_footer(); moblog_get_mails();?>
+
 
 </body>
 </html>
