@@ -258,40 +258,13 @@ img {
 	margin:0px;
 }
 
-
-
 .read-status {
-	padding-left:20px;
-}
-
-.read-status a {
-	
-}
-
-.read-status a .dashicons {
-	border-radius: 50px;
-	margin-top: 8px;
-	font-size: 21px;
-	border: 2px solid;
-	padding-top: 0px;
-	padding-bottom: 1px;
-	padding-left: 0px;
-	padding-right: 2px;
-}
-
-.read-status a:visited .dashicons {
-	
+	display:none;
 }
 
 
-.read-status a:link .dashicons {
-	color:white;
-	background-color: white;
-}
 
-.read-status a:hover {
-	text-decoration:none;
-}
+
 
 
 /*--------------------------------------------------------------
@@ -301,6 +274,10 @@ img {
 
 .teaser-big {
 	clear:both;
+}
+
+.teaser-big .contrast {
+	color:red;
 }
 
 
@@ -315,6 +292,10 @@ img {
 
 .singular .entry-title {
 	margin-bottom: 1em;
+}
+
+.singular .entry-title .contrast {
+	color:red;
 }
 
 .singular .entry-content,
@@ -376,13 +357,13 @@ blockquote {
 }
 
 .clickme a {
-	color:blue;
-	border-color:blue;
+	color:black;
+	border-color:black;
 }
 
 .clickme a:visited {
-	color:purple;
-	border-color: purple;
+	color:black;
+	border-color: black;
 }
 
 .clickme a:hover {
@@ -390,6 +371,10 @@ blockquote {
 	background-color:#eee;
 	border-color:gray;
 	color:black;
+}
+
+.clickme .dashicons {
+	color:red;
 }
 
 .tellme {
@@ -400,6 +385,7 @@ blockquote {
 # Rainbow Warrior
 --------------------------------------------------------------*/
 
+/*
 .rainbow-warrior > a:nth-child(10n+1),
 .rainbow-warrior > *:nth-child(10n+1) a {
 	color:purple;
@@ -465,6 +451,8 @@ blockquote {
 	border-color:gray;
 	color:black;
 }
+
+*/
 
 .clickme .dashicons {
 	padding-top: 0.4em;

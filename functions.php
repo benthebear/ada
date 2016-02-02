@@ -183,6 +183,16 @@ add_filter( 'excerpt_more', 'ada_excerpt_more' );
 
 
 
+function ada_filter_the_title( $title, $id = null ) {
+
+    $title = ada_add_constant_contrast($title);
+    
+    return $title;
+}
+add_filter( 'the_title', 'ada_filter_the_title', 10, 2 );
+
+
+
 
 
 /**

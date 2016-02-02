@@ -160,9 +160,9 @@ function ada_add_random_variant($string){
 			$string2 = $result1[2];
 			$result2 = ada_get_random_letter($result1[2]);	
 			if(is_array($result2)){	
-				$string2 = $result2[0]."<span style='color:red'>".$result2[1]."</span>".$result2[2];
+				$string2 = $result2[0]."<span class='contrast'>".$result2[1]."</span>".$result2[2];
 			}
-			$return = $result1[0]."<span style='color:red'>".$result1[1]."</span>".$string2;
+			$return = $result1[0]."<span class='contrast'>".$result1[1]."</span>".$string2;
 		}else{
 			return $string;
 		}
@@ -172,7 +172,7 @@ function ada_add_random_variant($string){
 }
 
 function ada_get_random_letter($string){
-	//$in = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	$in = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 	$in = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 	$result = array();
 	$hit = false;
@@ -209,9 +209,105 @@ function ada_get_random_letter($string){
 		}else{
 			return $string;
 		}
-	}	
+	}		
+}
 
+function ada_add_constant_contrast($string){
+	// Main Variables for our parser
+	$opentags = 0;
+	$inside_tag = false;
+	$inside_entity = false;
+	$in_numbers = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+	$in_letters_uppercase = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	$in_letters_lowercase = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+	$letter_values =array(
+	 "0" => 10, "1" => 1, "2" => 2, "3" => 3, "4" => 300, "5" => 5, "6" => 6, "7" => 7, "8" => 8, "9" => 9,
+	 "A" =>  1, "B" =>  2,"C" =>  3,"D" =>  4,"E" =>  5,"F" => 6,"G" => 7,"H" => 8,"I" => 9,"J" => 10,
+	 "K" => 11, "L" => 12,"M" => 13,"N" => 14,"O" => 15,"P" => 16,"Q" => 17,"R" => 18,"S" => 20,
+	 "T" => 21, "U" => 22,"V" => 23,"W" => 24,"X" => 25,"Y" => 26, "Z" => 27, 
+	 "a" => 31, "b" => 32,"c" => 33,"d" => 34,"e" => 35,"f" =>36,"g" =>37,"h" =>38,"i" =>39,"j" =>300,
+	 "k" => 41, "l" => 42,"m" =>43,"n" =>44,"o" =>45,"p" =>300,"q" =>300,"r" =>48,"s" =>49,
+	 "t" => 51, "u" => 52,"v" =>53,"w" =>54,"x" =>55, "y" =>300, "z"=>57);
+	// When do we want to hit a character
+	$hit_limit = 200;
+	$hit_counter = 187;
+	$hit_yet = false;
+	$number_of_hits = 0;
+	
+	$starttag = "<span class='contrast'>";
+	$endtag = "</span>";
+	
+	// First basic Calculations
+	$length = mb_strlen($string);
+	// How often do we want to contrast a Letter? 
+	// About one contrast for every 10 Characters.
+	$target = floor($length/10);
+	
+	for($position = 0; $position<$length; $position++){
+				
+		$this_letter = mb_substr($string, $position, 1);
+		// Check wether we're inside Markup
+		if($this_letter == "<"){
+			$inside_tag = true;
+		}
+		if($this_letter == ">"){
+			$inside_tag = false;
+		}
+		if($this_letter == "&"){
+			$inside_entity = true;
+		}
+		if($this_letter == ";"){
+			$inside_entity = false;
+		}
+		
+		// If were not inside Markup and if our current character ist valid …
+		if(!$inside_tag and !$inside_entity and 
+			(  in_array($this_letter, $in_numbers) 
+			or in_array($this_letter, $in_letters_uppercase) 
+			or in_array($this_letter, $in_letters_lowercase))){
+						
+			// … then we increase the Counter
+			if(isset($letter_values[$this_letter])){
+				$hit_counter = $hit_counter + $letter_values[$this_letter];
+			}else{
+				$hit_counter = $hit_counter+10;
+			}
+		
+			
+			// Then Check wether we hit the Limit
+			if($hit_counter > $hit_limit){	
+									
+				$string = ada_inject_code_into_string($string, $position, $starttag, $endtag);
+				$position = $position +  mb_strlen($starttag) + mb_strlen($endtag) + 1;
+				$length = $length + mb_strlen($starttag) + mb_strlen($endtag);
+				$hit_counter = 0;
+				$number_of_hits ++;
+			}
+			
+			// Check wether we already have enough hits
+			if($number_of_hits > $target){
+				break;
+			}
+			
+		}
+		
+		
+	}
+	
+	
+	return $string;
+	
+}
 
+function ada_inject_code_into_string($string, $position, $starttag, $endtag){
+	
+	$result[] = mb_substr($string, 0, $position);
+	$result[] = mb_substr($string, $position, 1);
+	$result[] = mb_substr($string, $position+1, mb_strlen($string)-1);
+	
+	$return = $result[0].$starttag.$result[1].$endtag.$result[2];
+	
+	return $return;
 	
 }
 
