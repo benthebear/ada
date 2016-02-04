@@ -12,7 +12,7 @@ if ( ! function_exists( 'ada_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function ada_posted_on() {
-	$time_string = '<time class="entry-meta-item entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	
 
 	$time_string = sprintf( $time_string,

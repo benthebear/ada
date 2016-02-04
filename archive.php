@@ -20,6 +20,28 @@ get_header(); ?>
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
+				
+				<?php 
+					if(is_day() or is_month() or is_year()){
+						$first_year = ada_get_first_year();
+						$last_year = date("Y");  
+						
+						
+						print ada_get_navigation_yearly($first_year, $last_year);
+						
+						print ada_get_navigation_monthly();
+						
+						if(is_day() or is_month()){
+							print ada_get_navigation_daily();
+						}
+						
+					} // End of Chronological Navigation
+						
+				?>
+				
+				
+				
+				
 			</header><!-- .page-header -->
 
 			<div class="list-of-teasers rainbow-warrior">
@@ -51,6 +73,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	
+	<hr/>
 	
 	<aside class="widget-area widget-area-archive" role="complementary">
 	<?php dynamic_sidebar( 'thearchives' ); ?>

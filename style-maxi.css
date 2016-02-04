@@ -48,7 +48,7 @@ html, body, textarea {
 .rainbow-warrior .teaser {
 	padding-bottom:0px;
 	border-bottom:0px solid white;
-	padding-left:20px;
+	/*padding-left:20px;*/
 	/*border-left:5px solid black;*/
 }
 
@@ -106,7 +106,7 @@ html, body, textarea {
 	clear:both;
 	width:712px;
 	margin-bottom:4em;
-	margin-left:182px;
+	margin-left:183px;
 	min-height:210px;
 }
 
@@ -124,13 +124,25 @@ html, body, textarea {
 }
 
 .teaser-big .teaser-text {
-	min-height:182px; 
+	min-height:100px; 
+}
+
+.teaser-big.has-post-thumbnail .teaser-text {
+	margin-left:184px;
+}
+
+.teaser-big .entry-meta-item {
+	
+}
+
+.teaser-big.has-post-thumbnail .entry-meta-item {
+	margin-left:184px;
 }
 
 .read-status {
 	padding-left:0px;
 	position: absolute;
-	left:180px;
+	left:153px;
 	display: inline;
 }
 
@@ -142,14 +154,21 @@ html, body, textarea {
 	border-radius: 50px;
 	margin-top: 8px;
 	margin-left: 4px;
-	font-size: 21px;
+	font-size: 17px;
 	border: 2px solid;
 	padding-top: 0px;
-	padding-bottom: 1px;
+	padding-bottom: 0px;
 	padding-left: 0px;
-	padding-right: 2px;
+	padding-right: 0px;
 	color:white;
 	border-color: white;
+	width: 17px;
+	height: 17px;
+}
+
+.read-status a .dashicons:before{
+	width: 18px;
+	height: 17px;
 }
 
 .read-status a:visited .dashicons {
@@ -168,6 +187,29 @@ html, body, textarea {
 
 
 /*--------------------------------------------------------------
+# Archives
+--------------------------------------------------------------*/
+
+.page-header {
+	margin-bottom: 2em;
+}
+
+.module-archive-navigation {
+	margin-bottom: 1em;
+}
+
+
+.module-archive-navigation .year {
+	display:inline-block;
+	width:3em;
+	text-align: center;
+}
+
+.module-archive-navigation-daily {
+	font-size:19px;
+}
+
+/*--------------------------------------------------------------
 # Singulars, Single, Post, Pages
 --------------------------------------------------------------*/
 
@@ -183,6 +225,7 @@ html, body, textarea {
 
 .singular .content-full .entry-content {
 	min-height:300px;
+	margin-bottom:3em;
 }
 
 .single-format-image .content-full .entry-content {
@@ -318,3 +361,8 @@ html, body, textarea {
 .mosaic img {
 	
 }
+
+
+
+
+.show-grid .site { background: url("http://anmutunddemut.de/wp-content/themes/ada/demo/grid.jpg") repeat scroll 0 0 transparent; }*/

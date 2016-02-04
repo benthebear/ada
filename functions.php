@@ -184,16 +184,272 @@ add_filter( 'excerpt_more', 'ada_excerpt_more' );
 
 
 function ada_filter_the_title( $title, $id = null ) {
+	
+	if(is_singular() or is_home() or  is_archive()){
 
-    $title = ada_add_constant_contrast($title);
-    
+    	$title = ada_add_constant_contrast($title);
+    }
     return $title;
 }
 add_filter( 'the_title', 'ada_filter_the_title', 10, 2 );
 
 
 
+function ada_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
 
+	if ( 'div' == $args['style'] ) {
+		$tag = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag = 'li';
+		$add_below = 'div-comment';
+	}
+	?>
+	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' != $args['style'] ) : ?>
+	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	<?php endif; ?>
+	
+	<div class="comment-meta">
+		<div class="comment-author vcard">
+			<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+			<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+		</div>
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+		<br />
+	<?php endif; ?>
+
+		<div class="commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+			<?php
+			/* translators: 1: date, 2: time */
+			printf( __('%1$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  | ', '' );
+			?>
+		</div>
+	</div>
+
+	<?php comment_text(); ?>
+
+	<hr/>
+
+	<div class="reply">
+	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+	</div>
+	
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+	<?php endif; ?>
+	<?php
+}
+
+
+function ada_get_first_year(){
+	return ada_get_first_date("year");
+}
+
+function ada_get_first_date($scope){
+	global $wpdb;
+	global $first_year;
+	global $first_month;
+	global $first_day;
+	
+	if($scope == "year" and $first_year > 0){
+		return $first_year;
+	}
+	
+	if($scope == "month" and $first_month > 0){
+		return $first_month;
+	}
+	
+	if($scope == "day" and $first_day > 0){
+		return $first_day;
+	}
+	
+	$args = array();
+	$args['posts_per_page'] = 1;
+	$args['order'] = "ASC";
+	
+	$first_post = get_posts($args);
+
+	wp_reset_postdata();
+	
+	if(isset($first_post[0]->post_date)){
+		$first_year = date("Y", strtotime($first_post[0]->post_date));
+		$first_month = date("m", strtotime($first_post[0]->post_date));		
+		$first_day = date("d", strtotime($first_post[0]->post_date));
+	}
+	
+	if($scope == "year" and $first_year > 0){
+		return $first_year;
+	}
+	
+	if($scope == "month" and $first_month > 0){
+		return $first_month;
+	}
+	
+	if($scope == "day" and $first_day > 0){
+		return $first_day;
+	}
+
+}
+
+function ada_get_navigation_yearly($first_year, $last_year){
+	$output = "";
+	$output .= '<div class="module-archive-navigation module-archive-navigation-yearly">';
+    $links = array(); 
+    $class = "year";
+    
+    // Do stuff to make the Navigation look good, if it cover more than two Decades
+    
+    if(mb_substr($first_year, 0, 3)!= mb_substr($last_year, 0, 3)){
+	    $start_year = mb_substr($first_year, 0, 3)."0";
+	    
+    }else{
+	    $start_year = $first_year;
+	    
+    }
+    
+     $prefix = array();
+    
+    for($i = $start_year; $i<=$last_year; $i++){
+	    
+	    if($i < $first_year){
+		    $prefix[] = '<span class="'.$class.'">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="visibility:hidden;">&nbsp;|&nbsp;</span>';
+	    }elseif($i ==  get_the_time('Y')){
+			$links[] = '<span class="'.$class.'">'.$i.'</span>';
+		}else{
+			
+			$post_count = ada_get_postcount_by_year($i);
+			
+			$links[] = '<a class="'.$class.'" title="'.$post_count.' '.__('posts this year.', 'ada').'" href="'.get_bloginfo('home')."/".$i.'/">'.$i.'</a>';
+		}                    
+		
+		if(mb_substr($i, 3, 1) == 9){
+			$prefix_string = implode("", $prefix);			
+			$link_string = implode(" | ", $links);
+			$output .= '<div class="module-archive-navigation module-archive-navigation-yearly module-archive-navigation-yearly-decade">';
+			$output .= $prefix_string;
+			$output .= $link_string;
+			$output .= '</div>';
+			$links = array();
+			$string = "";
+		}
+		
+    }   
+    
+    
+    $string .= implode(" | ", $links);
+	$output .= '<div class="module-archive-navigation module-archive-navigation-yearly module-archive-navigation-yearly-decade">';
+	$output .= $string;
+	$output .= '</div><!-- /.module-archive-navigation-yearly-decade -->';
+              
+    $output .= '</div><!-- /.module-archive-navigation-yearly -->';
+   
+	return $output;
+}
+
+function ada_get_navigation_monthly(){
+	$output = '';
+	
+	$the_year = get_the_time('Y');
+	$the_month = get_the_time('m');
+	
+	$output .= '<div class="module-archive-navigation module-archive-navigation-monthly">';
+  		  
+
+	$links = array();
+	for($i = 1; $i<=12; $i++){
+			
+		if($i < 10 ){
+			$number = "0".$i;
+		}else{
+			$number = $i;
+		}
+		
+		$month_name = __(date("F", strtotime($the_year."-".$number."-27")), 'ada');
+		$post_count = ada_get_postcount_by_month($the_year, $number);
+
+				
+		if(($i == $the_month  and !is_year()) or (ada_get_postcount_by_month($the_year, $number)<1)){
+			$links[] = $month_name;
+		}else{
+			$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this month', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$number.'">'.$month_name.'</a>';
+		}                    
+	}
+	$string = implode(" | ", $links);
+	$output .= $string;
+	
+	$output .= '</div>';
+	
+	return $output;
+}
+
+function ada_get_navigation_daily(){
+	$output .= '<div class="module-archive-navigation module-archive-navigation-daily">';
+	
+	
+	$the_year = get_the_time('Y');
+	$the_month = get_the_time('m');
+	
+	$links = array();
+	for($i = 1; $i<=31; $i++){
+		
+		if($i < 10 ){
+			$number = "0".$i;
+		}else{
+			$number = $i;
+		}
+		
+		$post_count = ada_get_postcount_by_day($the_year, $the_month, $number);
+		
+		
+		if(($i ==  get_the_time('d') and !(is_year() or is_month())) or $post_count<1){
+			$links[] = $i;
+		}else{
+			$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this day', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$the_month.'/'.$i.'">'.$i.'</a>';
+		}                    
+	}
+	
+	$string = implode(" | ", $links);
+	$output .= $string;
+	
+	$output .= '</div>';
+	
+	return $output;
+}
+
+function ada_get_postcount_by_year($year){
+	global $wpdb;
+	
+	$sql = "SELECT count(ID) FROM ".$wpdb->posts." WHERE post_date > '".$year."-01-01 00:00:00' AND post_date < '".$year."-12-31 23:59:00' AND post_type = 'post' and post_status ='publish'";
+
+	$count = $wpdb->get_var($sql);
+	
+	return $count;
+}
+
+
+function ada_get_postcount_by_month($year, $month){
+	global $wpdb;
+	
+	$sql = "SELECT count(ID) FROM ".$wpdb->posts." WHERE post_date > '".$year."-".$month."-01 00:00:00' AND post_date < '".$year."-".$month."-31 23:59:00' AND post_type = 'post' and post_status ='publish'";
+
+	$count = $wpdb->get_var($sql);
+	
+	return $count;
+}
+
+function ada_get_postcount_by_day($year, $month, $day){
+	global $wpdb;
+	
+	$sql = "SELECT count(ID) FROM ".$wpdb->posts." WHERE post_date > '".$year."-".$month."-".$day." 00:00:00' AND post_date < '".$year."-".$month."-".$day." 23:59:00' AND post_type = 'post' and post_status ='publish'";
+
+	$count = $wpdb->get_var($sql);
+	
+	return $count;
+}
 
 /**
  * Implement the Custom Header feature.

@@ -20,12 +20,22 @@
 <?php wp_head(); ?>
 </head>
 <?php 
-	$bodyclasses = "";
+	$bodyclasses_string = "";
+	$bodyclasses_array = array();
 	if(is_singular()){
-		$bodyclasses = "singular";
+		$bodyclasses_array[] = "singular";
 	}	
+	
+	if($_GET['grid']=="show"){
+		$bodyclasses_array[] = "show-grid";
+	}
+	
+	if(count($bodyclasses_array)>0){
+		$bodyclasses_string = implode(" ", $bodyclasses_array);
+	}
+	
 ?>
-<body <?php body_class($bodyclasses); ?>>
+<body <?php body_class($bodyclasses_string); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ada' ); ?></a>
 

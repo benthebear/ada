@@ -30,6 +30,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
+	<hr/>
+	
 	<aside class="widget-area widget-area-singular" role="complementary">
 	<?php dynamic_sidebar( 'thearticle' ); ?>
 	</aside>
