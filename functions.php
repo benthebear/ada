@@ -182,19 +182,6 @@ function ada_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'ada_excerpt_more' );
 
 
-
-function ada_filter_the_title( $title, $id = null ) {
-	
-	if(is_singular() or is_home() or  is_archive()){
-
-    	$title = ada_add_constant_contrast($title);
-    }
-    return $title;
-}
-add_filter( 'the_title', 'ada_filter_the_title', 10, 2 );
-
-
-
 function ada_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
