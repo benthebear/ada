@@ -31,10 +31,15 @@ html, body, textarea {
 # Repeating Visual Patterns 
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
-# Mosaic
+## Mosaic
 --------------------------------------------------------------*/
+
+/* Only 3x Boxes á 3 Columns fit here */
+.mosaic {
+	max-width: 529px;
+	margin:auto;
+}
 
 
 .mosaic > *:nth-child(2n+2) {
@@ -48,3 +53,7 @@ html, body, textarea {
 .mosaic img {
 	width:95%;	
 }
+
+
+
+

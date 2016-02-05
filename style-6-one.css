@@ -195,7 +195,7 @@ html, body, textarea {
 }
 
 .module-archive-navigation {
-	margin-bottom: 1em;
+	margin-bottom: 0.2em;
 }
 
 
@@ -341,6 +341,11 @@ html, body, textarea {
 /*--------------------------------------------------------------
 ## Mosaic
 --------------------------------------------------------------*/
+
+.mosaic {
+	max-width: 1078px;
+	margin:auto;
+}
 
 .mosaic > *:nth-child(2n+2) {
 	margin-right:20px;	

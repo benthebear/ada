@@ -24,6 +24,12 @@ html, body, textarea {
 # Mosaic
 --------------------------------------------------------------*/
 
+/* Only 4x Boxes á 3 Columns fit here */
+
+.mosaic {
+	max-width: 712px;
+	margin:auto;
+}
 
 .mosaic > *:nth-child(2n+2) {
 	margin-right:20px;	

@@ -157,12 +157,13 @@ html, body, textarea {
 --------------------------------------------------------------*/
 
 .mosaic {
+	max-width: 346px;
 	text-align: center;
 	margin:auto;
 }
 
 .mosaic > * {
-	width:161px;
+	width:163px;
 	height:auto;
 	overflow:hidden;
 	display:block;
@@ -177,6 +178,11 @@ html, body, textarea {
 
 .mosaic img {
 	width:95%;
+}
+
+.teaser-mosaic > * {
+	max-width: 163px;
+	max-height: 163px;
 }
 
 .teaser-mosaic img {
