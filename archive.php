@@ -26,6 +26,17 @@ get_header(); ?>
 						$first_year = ada_get_first_year();
 						$last_year = date("Y");  
 						
+						/* Mobile First */
+						
+						//print ada_get_navigation_yearly($first_year, $last_year, "select");
+						
+						//print ada_get_navigation_monthly("select");
+						
+						if(is_day() or is_month()){
+							//print ada_get_navigation_daily("select");
+						}
+						
+						/* Desktop Second */						
 						
 						print ada_get_navigation_yearly($first_year, $last_year);
 						

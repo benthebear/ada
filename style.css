@@ -30,6 +30,7 @@ Have fun, and don't be afraid to contact me if you have questions.
 # Normalize
 # Fixing Stuff of underscores and WordPress Defaults
 # Typography
+## Clearings
 # Genral Layout
 # Header
 # Footer
@@ -38,6 +39,7 @@ Have fun, and don't be afraid to contact me if you have questions.
 ## Teaser Big
 # Archives
 # Singulars, Single, Posts, Pages
+## Alignments
 ## Comments
 # Repeating Visual Patterns 
 ## Clickme Buttons 
@@ -444,6 +446,34 @@ hr {
 	clear:both;	
 }
 
+/*--------------------------------------------------------------
+## Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
 
 
 
@@ -620,6 +650,26 @@ blockquote {
 
 .comment-list {
 	list-style-type: none;
+}
+
+/*--------------------------------------------------------------
+## Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: block;
+	margin-bottom:1.5em;
+}
+
+.alignright {
+	display: block;
+	margin-bottom:1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 

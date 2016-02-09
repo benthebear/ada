@@ -281,9 +281,14 @@ function ada_get_first_date($scope){
 
 }
 
-function ada_get_navigation_yearly($first_year, $last_year){
+function ada_get_navigation_yearly($first_year, $last_year, $style = "div"){
 	$output = "";
+	
 	$output .= '<div class="module-archive-navigation module-archive-navigation-yearly">';
+    if($style == "select"){
+	   $output .= __('Year', 'ada').": <select>"; 
+    }
+    
     $links = array(); 
     $class = "year";
     
@@ -304,15 +309,22 @@ function ada_get_navigation_yearly($first_year, $last_year){
 	    if($i < $first_year){
 		    $prefix[] = '<span class="'.$class.'">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="visibility:hidden;">&nbsp;|&nbsp;</span>';
 	    }elseif($i ==  get_the_time('Y')){
-			$links[] = '<span class="'.$class.'">'.$i.'</span>';
+		    if($style == "div"){
+				$links[] = '<span class="'.$class.'">'.$i.'</span>';
+			}else{
+				$links[] = '<option selected="selected">'.$i.'</option>';
+			}
 		}else{
 			
-			$post_count = ada_get_postcount_by_year($i);
-			
-			$links[] = '<a class="'.$class.'" title="'.$post_count.' '.__('posts this year.', 'ada').'" href="'.get_bloginfo('home')."/".$i.'/">'.$i.'</a>';
+			$post_count = ada_get_postcount_by_year($i);		
+			if($style == "div"){	
+				$links[] = '<a class="'.$class.'" title="'.$post_count.' '.__('posts this year.', 'ada').'" href="'.get_bloginfo('home')."/".$i.'/">'.$i.'</a>';
+			}else{
+				$links[] = '<option >'.$i.'</option>';
+			}
 		}                    
 		
-		if(mb_substr($i, 3, 1) == 9){
+		if(mb_substr($i, 3, 1) == 9 and $style == "div"){
 			$prefix_string = implode("", $prefix);			
 			$link_string = implode(" | ", $links);
 			$output .= '<div class="module-archive-navigation module-archive-navigation-yearly module-archive-navigation-yearly-decade">';
@@ -326,24 +338,34 @@ function ada_get_navigation_yearly($first_year, $last_year){
     }   
     
     
-    $string .= implode(" | ", $links);
-	$output .= '<div class="module-archive-navigation module-archive-navigation-yearly module-archive-navigation-yearly-decade">';
-	$output .= $string;
-	$output .= '</div><!-- /.module-archive-navigation-yearly-decade -->';
+	if($style == "div"){
+	    $string .= implode(" | ", $links);
+		$output .= '<div class="module-archive-navigation module-archive-navigation-yearly module-archive-navigation-yearly-decade">';
+		$output .= $string;
+		$output .= '</div><!-- /.module-archive-navigation-yearly-decade -->';
+	}
+
+	if($style == "select"){
+	   $string .= implode("\n", $links);
+	   $output .= $string;
+	   $output .= "</select>"; 
+    }
               
     $output .= '</div><!-- /.module-archive-navigation-yearly -->';
    
 	return $output;
 }
 
-function ada_get_navigation_monthly(){
+function ada_get_navigation_monthly($style = "div"){
 	$output = '';
 	
 	$the_year = get_the_time('Y');
 	$the_month = get_the_time('m');
 	
 	$output .= '<div class="module-archive-navigation module-archive-navigation-monthly">';
-  		  
+  	if($style == "select"){
+	   $output .= __('Month', 'ada').": <select>"; 
+    }	  
 
 	$links = array();
 	for($i = 1; $i<=12; $i++){
@@ -359,21 +381,46 @@ function ada_get_navigation_monthly(){
 
 				
 		if(($i == $the_month  and !is_year()) or (ada_get_postcount_by_month($the_year, $number)<1)){
-			$links[] = $month_name;
+			if($style=="div"){
+				$links[] = $month_name;
+			}elseif($style=="select" and $i == $the_month){
+				$links[] = "<option selected='selected'>".$month_name."</option>";
+			}else{
+				$links[] = "<option>".$month_name."</option>";
+			}
 		}else{
-			$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this month', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$number.'">'.$month_name.'</a>';
+			if($style=="div"){
+				$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this month', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$number.'">'.$month_name.'</a>';
+			}elseif($style=="select"){
+				$links[] = "<option>".$month_name."</option>";
+			}
 		}                    
 	}
-	$string = implode(" | ", $links);
-	$output .= $string;
+	
+	if($style == "div"){
+		$string = implode(" | ", $links);
+		$output .= $string;
+	}
+	
+	if($style == "select"){
+	   $string .= implode("\n", $links);
+	   $output .= $string;
+	   $output .= "</select>"; 
+    }
 	
 	$output .= '</div>';
 	
 	return $output;
 }
 
-function ada_get_navigation_daily(){
+function ada_get_navigation_daily($style="div"){
+	$output = '';
+	
 	$output .= '<div class="module-archive-navigation module-archive-navigation-daily">';
+	
+	if($style == "select"){
+	   $output .= __('Day', 'ada').": <select>"; 
+    }
 	
 	
 	$the_year = get_the_time('Y');
@@ -392,14 +439,33 @@ function ada_get_navigation_daily(){
 		
 		
 		if(($i ==  get_the_time('d') and !(is_year() or is_month())) or $post_count<1){
-			$links[] = $i;
+			if($style=="div"){
+				$links[] = $i;
+			}elseif($style=="select" and $i ==  get_the_time('d') and !(is_year() or is_month())){
+				$links[] = "<option selected='selected'>".$i."</option>";
+			}else{
+				$links[] = "<option>".$i."</option>";
+			}
 		}else{
-			$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this day', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$the_month.'/'.$i.'">'.$i.'</a>';
+			if($style=="div"){
+				$links[] = '<a '.$class.' title="'.$post_count.' '.__('post this day', 'ada').'" href="'.get_bloginfo('home').'/'.$the_year.'/'.$the_month.'/'.$i.'">'.$i.'</a>';
+			}else{
+				$links[] = "<option>".$i."</option>";
+			}
 		}                    
 	}
 	
-	$string = implode(" | ", $links);
-	$output .= $string;
+	if($style == "div"){
+		$string = implode(" | ", $links);
+		$output .= $string;
+	}
+	
+	if($style == "select"){
+	   $string .= implode("\n", $links);
+	   $output .= $string;
+	   $output .= "</select>"; 
+    }
+	
 	
 	$output .= '</div>';
 	
