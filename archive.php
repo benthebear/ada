@@ -55,7 +55,7 @@ get_header(); ?>
 				
 			</header><!-- .page-header -->
 
-			<div class="list-of-teasers rainbow-warrior">
+			<div class="list-of-teasers rainbow-warrior h-feed">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();

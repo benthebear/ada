@@ -12,7 +12,7 @@ if ( ! function_exists( 'ada_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function ada_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time>';
 	
 
 	$time_string = sprintf( $time_string,
@@ -27,7 +27,7 @@ function ada_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'ada' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard p-author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 	
 	
@@ -55,7 +55,7 @@ function ada_entry_footer() {
 			if ( ! empty( $categories ) ) {
 				$output .= '<div class="entry-meta-item cat-links clickme rainbow-warrior">'; 
 			    foreach( $categories as $category ) {
-			        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '"><span class="dashicons dashicons-category"></span>' . esc_html( $category->name ) . '</a>' . $separator;
+			        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category"><span class="dashicons dashicons-category"></span>' . esc_html( $category->name ) . '</a>' . $separator;
 			    }
 			    $output .= '</div>';
 			    echo trim( $output, $separator );
@@ -69,7 +69,7 @@ function ada_entry_footer() {
 			if ( ! empty( $tags ) ) {
 				$output .= '<div class="entry-meta-item tags-links clickme rainbow-warrior">'; 
 			    foreach( $tags as $tag ) {
-			        $output .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '"><span class="dashicons dashicons-tag"></span>' . esc_html( $tag->name ) . '</a>' . $separator;
+			        $output .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category"><span class="dashicons dashicons-tag"></span>' . esc_html( $tag->name ) . '</a>' . $separator;
 			    }
 			    $output .= '</div>';
 			    echo trim( $output, $separator );

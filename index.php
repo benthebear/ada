@@ -28,7 +28,7 @@ get_header(); ?>
 			<?php
 			endif;
 
-			print '<div class="list-of-teasers rainbow-warrior">';
+			print '<div class="list-of-teasers rainbow-warrior h-feed">';
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

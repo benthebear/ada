@@ -9,16 +9,16 @@
 
 ?>
 <!-- template: teaser-big.php -->
-<article id="post-<?php the_ID(); ?>" <?php post_class("teaser teaser-big"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("teaser teaser-big h-entry"); ?>>
 	
 		<?php
 			
 			$readstatus = '';
 			$readstatus .= '<span class="read-status"><a href="'.get_permalink().'" title="'.__( 'Your Browser knows, that you have already visited this Post.', 'ada' ).'"><span class="dashicons dashicons-yes">&nbsp;</span></a></span>';
-			print ada_add_constant_contrast(the_title( '<h2 class="entry-title">'.$readstatus.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>', false ));
+			print ada_add_constant_contrast(the_title( '<h2 class="entry-title p-name">'.$readstatus.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="u-uid  u-url">', '</a></h2>', false ));
 			
 			if(has_post_thumbnail()){
-				print "<figure class='thumbnail'>";
+				print "<figure class='thumbnail u-photo'>";
 				print '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 				the_post_thumbnail('thumbnail');
 				print "</a>";
@@ -26,7 +26,7 @@
 			}			
 	
 	
-			print "<div class='teaser-text'>";
+			print "<div class='teaser-text p-summary'>";
 			if(has_excerpt()){
 				the_excerpt();	
 			}else{

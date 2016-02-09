@@ -9,19 +9,19 @@
 
 ?>
 <!-- template: content-page.php -->
-<article id="post-<?php the_ID(); ?>" <?php post_class("content-full "); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("content-full h-entry"); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title p-name">', '</h1>' ); ?>
 		<?php 
 			if(has_post_thumbnail()){
-				print "<p class='teaserimage'>";
+				print "<p class='teaserimage u-photo'>";
 				the_post_thumbnail('medium');
 				print "</p>";
 			}
 		?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content e-content">
 		<?php
 			the_content();
 
