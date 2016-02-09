@@ -32,7 +32,7 @@ function ada_posted_on() {
 	
 	
 
-	echo '<div class="entry-meta-item posted-on byline"> '.$posted_on.' ' . $byline . ' </div>'; // WPCS: XSS OK.
+	echo "\n\t".'<div class="entry-meta-item posted-on byline"> '.$posted_on.' ' . $byline . ' </div>'; // WPCS: XSS OK.
 
 }
 endif;

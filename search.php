@@ -33,7 +33,7 @@ get_header(); ?>
 
 			endwhile;
 			
-			print "</div>";
+			print "</div><!-- /.list-of-teasers-->\n\n";
 	
 			print "<div class='clickme'>";
 			the_posts_navigation();
