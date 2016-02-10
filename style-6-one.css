@@ -198,7 +198,6 @@ html, body, textarea {
 	margin-bottom: 0.2em;
 }
 
-
 .module-archive-navigation .year {
 	display:inline-block;
 	width:3em;
@@ -207,6 +206,12 @@ html, body, textarea {
 
 .module-archive-navigation-daily {
 	font-size:19px;
+}
+
+.taxonomy-description {
+	width: 529px;
+	margin-left: 184px;
+	padding-left:0;
 }
 
 /*--------------------------------------------------------------

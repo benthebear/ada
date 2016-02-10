@@ -181,15 +181,18 @@ html, body, textarea {
 }
 
 .mosaic img {
-	width:95%;
+	
 }
 
 .teaser-mosaic > * {
 	max-width: 163px;
 	max-height: 163px;
+	
 }
 
 .teaser-mosaic img {
 	border:1px solid #808080;
+	width:161px;
+	height:161px;
 }
 
