@@ -121,7 +121,7 @@ h2, h3, p, ul, ol, dl, table, pre, iframe {
 
 
 html {
-	font-family: Georgia, serif;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -364,7 +364,7 @@ body {
 }
 
 html, body, textarea {
-	font-family: Georgia, serif;
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
 	line-height: 145%;
 }
 
@@ -384,12 +384,12 @@ h1.page-title, h2 {
 }
 
 h1.page-title a, h2 a{
-	color:black;
+
 }
 
 a,
 .contrast {
-	color:#ec1313;
+	/*color:#ec1313;*/
 }
 
 img {
@@ -400,7 +400,7 @@ img {
 
 hr:before{
 	content: "℘";
-	color: red;
+	color: gray;
 	background: white;
 	position: relative;
 	top: -15px;
@@ -598,7 +598,7 @@ hr {
 }
 
 .teaser-big .contrast {
-	color:#ec1313;
+	/*color:#ec1313;*/
 }
 
 
@@ -622,7 +622,7 @@ hr {
 }
 
 .singular .entry-title .contrast {
-	color:red;
+	/*color:red;*/
 }
 
 .singular .entry-content,
@@ -701,7 +701,7 @@ blockquote {
 }
 
 .clickme a:before {
-	color:black;
+	color:gray;
 }
 
 .clickme a {
@@ -712,13 +712,13 @@ blockquote {
 }
 
 .clickme a {
-	color:black;
-	border-color:black;
+	color:blue;
+	border-color:blue;
 }
 
 .clickme a:visited {
-	color:black;
-	border-color: black;
+	color:purple;
+	border-color: purple;
 }
 
 .clickme a:hover {
@@ -729,7 +729,7 @@ blockquote {
 }
 
 .clickme .dashicons {
-	color:#ec1313;
+	color:gray;
 }
 
 .clickme .dashicons {

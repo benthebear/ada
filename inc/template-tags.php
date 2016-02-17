@@ -142,7 +142,7 @@ function ada_teaser_text($content){
 		  $first_sentence = strpos($content, ". ");
 		  $second_sentence = strpos($content, ". ", $first_sentence+1);
 		  $content = substr($content, 0, $second_sentence+1);
-		  $content = "<p>".$content." <a href='".get_permalink()."'>".__( 'Read More <span class="meta-nav">&#187;</span>', 'ada' )."</a></p>";
+		  $content = "<p>".$content." <a href='".get_permalink()."'>".__( '… read more &#187;', 'ada' )."</a></p>";
 	}
 	
 	print $content;

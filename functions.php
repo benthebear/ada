@@ -175,7 +175,8 @@ add_action( 'wp_dequeue_scripts', 'ada_descripts' );
 
 
 function ada_excerpt_more( $more ) {
-	return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( '… read more &#187;', 'ada' ) . '</a>';
+	return "–----";
+	//return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( '… read more &#187;', 'ada' ) . '</a>';
 }
 
 add_filter( 'excerpt_more', 'ada_excerpt_more' );
