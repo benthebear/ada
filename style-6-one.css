@@ -365,6 +365,11 @@ body {
 .troika > * {
 	max-width:346px;
 	float:left;
+	margin-right: 20px;
+}
+
+.troika > *:nth-child(3n+3) {
+	margin-right:0px;	
 }
 
 .troika img {
