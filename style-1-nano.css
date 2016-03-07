@@ -90,6 +90,11 @@ html, body, textarea {
 	margin:auto;
 }
 
+.single-format-image .content-full .entry-content {
+	max-width: 100%;
+	margin-left:0px;
+}
+
 .singular .comment-list {
 	max-width: 26.5em;
 	margin:auto;

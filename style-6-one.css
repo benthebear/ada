@@ -6,7 +6,7 @@
 --------------------------------------------------------------*/
 
 html, body, textarea {
-	font-size:20px;	
+	font-size:18px;	
 }
 
 
@@ -14,6 +14,10 @@ html, body, textarea {
 # Genral Layout
 --------------------------------------------------------------*/
 
+
+body {
+
+}
 
 .site {
 	width:1120px;
@@ -42,7 +46,7 @@ html, body, textarea {
 
 .teaser h2 {
 	margin-bottom:0.5em;
-	font-size:33px;
+
 }
 
 .rainbow-warrior .teaser {
@@ -224,6 +228,7 @@ html, body, textarea {
 .singular .comment-list, 
 .singular .comment-respond {
 	width: 529px;
+	max-width:529px;
 	margin-left: 184px;
 	padding-left:0;
 }
@@ -334,6 +339,19 @@ html, body, textarea {
 ## broadside
 --------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+## Topics
+--------------------------------------------------------------*/
+
+.content-full .entry-content .topics {
+	margin-left:-184px;
+}
+
+.topics > * {
+	max-width:529px;
+	float:left;
+}
 
 
 /*--------------------------------------------------------------

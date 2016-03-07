@@ -16,8 +16,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<!-- wp_head -->
 <?php wp_head(); ?>
+<!-- /wp_head -->
 </head>
 <?php 
 	$bodyclasses_string = "";
@@ -40,6 +41,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ada' ); ?></a>
 
 	<header id="masthead" class="site-header region region-header" role="banner">
+		
+		<?php if ( get_header_image() ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+		</a>
+		<?php endif; // End header image check. ?>
+		
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
