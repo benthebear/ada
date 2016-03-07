@@ -72,6 +72,10 @@ function ada_setup() {
 	add_theme_support( 'custom-background', apply_filters( 'ada_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
+		'default-repeat' => 'no-repeat',
+		'default-position-x' => 'top center',
+		'default-attachment' => 'fixed',
+		'default-size' => 'cover',
 	) ) );
 }
 endif;
