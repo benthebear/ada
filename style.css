@@ -110,7 +110,7 @@ ul, ol, dd{
 }
 
 h2, h3, p, ul, ol, dl, table, pre, iframe {
-	margin-bottom:1em;	
+	margin-bottom:2em;	
 }
 
  ul ul,
@@ -398,13 +398,14 @@ img {
 
 
 hr:before{
-	content: "℘";
-	color: gray;
+	content: "\f487";
+	color: firebrick;
 	background: white;
 	position: relative;
-	top: -15px;
-	left: 47%;
-	padding:0px 20px 0px 20px;
+	top: -9px;
+	left: 41%;
+	padding: 0px 20px 0px 20px;
+	font: 400 12px/1 dashicons !important;
 }
 
 hr {
@@ -514,6 +515,36 @@ hr {
 	float:none;
 }
 
+.site-header .post-navigation {
+	float:right;
+}
+
+.site-header .nav-links {
+    font-size:20px;
+}
+
+.site-header .nav-previous {
+    padding-right:0.5em;
+}
+
+.site-header .nav-next {
+    padding-right:0.5em;
+}
+
+.site-header .search {
+	float:right;
+    text-decoration: none;
+}
+
+.site-header .search:before {
+	font: 400 18px/1 dashicons !important;
+	content: "\f179";
+	color:white;
+    top:4px;
+    position:relative;
+}
+
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -557,18 +588,33 @@ hr {
 	
 }
 
+.search-head,
+.search-head .search-form{
+    margin-bottom: 2em;
+}
 
-.widget_search .search-field {
+.widget_search,
+.search-head {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.widget_search .search-field,
+.search-head .search-field{
 	width:64%;
-	border:2px solid black;
+	border:1px solid black;
+	border-radius: 3px;
 	padding: 5px;
 }
 
-.widget_search .search-submit {
+.widget_search .search-submit,
+.search-head .search-submit {
 	width:28%;
-	border:2px solid black;
+	border-style: outset;
+	border-width: 1px;
+	border-color: black;
 	background: white;
-	border-radius: 50px;
+	border-radius: 3px;
 	padding: 5px 15px;
 }
 
@@ -579,6 +625,7 @@ hr {
 .teaserimage {
 	text-align:center;
 	margin:0px;
+	margin-bottom: 2em;
 }
 
 .read-status {
@@ -587,7 +634,7 @@ hr {
 
 
 /*--------------------------------------------------------------
-## Teaser Big
+## @Teaser Big
 --------------------------------------------------------------*/
 
 
@@ -640,7 +687,7 @@ hr {
 /* Mixed Content Elements */
 
 blockquote {
-	border-left:2px solid #CCC;
+	border-left:1px solid #CCC;
 	padding-left: 1em;
 }
 
@@ -675,8 +722,35 @@ blockquote {
 ## Comments
 --------------------------------------------------------------*/
 
+input[type="text"],
+input[type="submit"],
+textarea {
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 3px;
+}
+
 .says {
 	display:none;
+}
+
+.comment-text {
+	clear:both
+}
+
+.comment-author-gravatar{
+	float:left;
+}	
+
+.comment-author-name,
+.comment-author-date {
+  margin-left: 122px;
+  display: block;
+}
+
+
+.comment-meta {
+	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -703,9 +777,9 @@ blockquote {
 }
 
 .clickme a {
-	border:2px solid black;
-	border-radius: 50px;
-	padding:5px 15px;
+	border:1px outset;
+	border-radius: 3px;
+	padding:8px 15px 5px 15px;
 	white-space: nowrap;
 }
 
@@ -740,78 +814,8 @@ blockquote {
 	display:none;
 }
 
-/*--------------------------------------------------------------
-## Rainbow Warrior
---------------------------------------------------------------*/
-
-/*
-.rainbow-warrior > a:nth-child(10n+1),
-.rainbow-warrior > *:nth-child(10n+1) a {
-	color:purple;
-	border-color:purple;
-}
-
-.rainbow-warrior > a:nth-child(10n+2),
-.rainbow-warrior > *:nth-child(10n+2) a {
-	color:DarkViolet;
-	border-color:DarkViolet;
-}
-
-.rainbow-warrior > a:nth-child(10n+3),
-.rainbow-warrior > *:nth-child(10n+3) a {
-	color:blue;
-	border-color:blue;
-}
-
-.rainbow-warrior > a:nth-child(10n+4),
-.rainbow-warrior > *:nth-child(10n+4) a {
-	color:deepskyblue;
-	border-color:deepskyblue;
-}
-
-.rainbow-warrior > a:nth-child(10n+5),
-.rainbow-warrior > *:nth-child(10n+5) a {
-	color:darkcyan;
-	border-color:darkcyan;
-}
 
 
-.rainbow-warrior > a:nth-child(10n+6),
-.rainbow-warrior > *:nth-child(10n+6) a {
-	color:green;
-	border-color:green;
-}
-
-.rainbow-warrior > a:nth-child(10n+7),
-.rainbow-warrior > *:nth-child(10n+7) a {
-	color:#f0cb02;
-	border-color:#f0cb02;
-}
-
-.rainbow-warrior > a:nth-child(10n+8),
-.rainbow-warrior > *:nth-child(10n+8) a {
-	color:orange;
-	border-color:orange;
-}
-
-.rainbow-warrior > a:nth-child(10n+9),
-.rainbow-warrior > *:nth-child(10n+9) a {
-	color:red;
-	border-color:red;
-}
-
-.rainbow-warrior > a:nth-child(10n+10),
-.rainbow-warrior .teaser:nth-child(10n+10) a {
-	color:firebrick;
-	border-color:firebrick;
-}
-
-.rainbow-warrior > a:hover {
-	border-color:gray;
-	color:black;
-}
-
-*/
 
 
 

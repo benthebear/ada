@@ -16,15 +16,17 @@
 			
 			$readstatus = '';
 			//$readstatus .= '<span class="read-status"><a href="'.get_permalink().'" title="'.__( 'Your Browser knows, that you have already visited this Post.', 'ada' ).'"><span class="dashicons dashicons-yes">&nbsp;</span></a></span>';
-			print ada_add_constant_contrast(the_title( '<h2 class="entry-title p-name">'.$readstatus.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="u-uid  u-url">', '</a></h2>', false ));
-			
 			if(has_post_thumbnail()){
 				print "\n\n\t<figure class='thumbnail u-photo'>";
 				print '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 				the_post_thumbnail('thumbnail');
 				print "</a>";
 				print "</figure>\n";
-			}			
+			}
+			
+			print ada_add_constant_contrast(the_title( '<h2 class="entry-title p-name">'.$readstatus.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="u-uid  u-url">', '</a></h2>', false ));
+			
+						
 	
 	
 			print "\n\t<div class='teaser-text p-summary'>\n\t\t";
@@ -44,7 +46,7 @@
 			
             ada_entry_commentcount();
 		?>
-	
+		<hr title="illegitimi non carborundum"/>
 </article><!-- #post-## -->
 <!-- /template: teaser-big.php -->
 

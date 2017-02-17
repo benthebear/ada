@@ -22,9 +22,14 @@ body {
 .site {
 	width:1120px;
 	border:1px solid black;
+	border-radius:3px;
 	margin-top:20px;
 }
 
+hr:before{
+	top: -12px;
+	left: 47%;
+}
 
 
 
@@ -34,10 +39,9 @@ body {
 --------------------------------------------------------------*/
 
 .page-header {
-	margin-left:20px;
+	margin-left:0px;
 	margin-right:20px;
 }
-
 
 
 /*--------------------------------------------------------------
@@ -47,6 +51,10 @@ body {
 .teaser h2 {
 	margin-bottom:0.5em;
 
+}
+
+.teaser-big .entry-meta-item {
+	display:block;
 }
 
 .rainbow-warrior .teaser {
@@ -210,6 +218,7 @@ body {
 
 .module-archive-navigation-daily {
 	font-size:19px;
+	letter-spacing: -1px;
 }
 
 .taxonomy-description {
@@ -249,7 +258,8 @@ body {
 
 }
 
-.singular .content-full .teaserimage {
+.singular .content-full .teaserimage,
+.archive .taxonomy-description .teaserimage {
 	float:right;
 	max-width: 286px;	
     position: absolute;
@@ -320,6 +330,10 @@ body {
 	width:348px;
 }
 
+.comment-text {
+	min-height: 122px;
+}
+
 
 /*--------------------------------------------------------------
 # Repeating Visual Patterns 
@@ -330,9 +344,14 @@ body {
 .entry-content .broadside,
 .entry-content .topics,
 .entry-content .troika,
-.entry-content .mosaic {    
+.entry-content .mosaic,
+.taxonomy-description .broadside,
+.taxonomy-description .topics,
+.taxonomy-description .troika,
+.taxonomy-description .mosaic {    
 	margin-left:-184px;
-	width:1078px;	
+	width:1078px;
+	clear:both;	
 }
 
 /*--------------------------------------------------------------
@@ -350,7 +369,12 @@ body {
 
 .topics > * {
 	max-width:529px;
+	width:529px;
 	float:left;
+}
+
+.topics > *:nth-child(1) {
+	margin-right:20px;
 }
 
 
@@ -387,6 +411,11 @@ body {
 	margin:auto;
 }
 
+.mosaic > * {
+	width:163px;
+	border:0px solid red;
+}
+
 .mosaic > *:nth-child(2n+2) {
 	margin-right:20px;	
 }
@@ -407,7 +436,17 @@ body {
 	
 }
 
+.mosaic::after {
+    content: "· ";
+    visibility: hidden;
+}
 
-
+/*--------------------------------------------------------------
+## Search-Page
+--------------------------------------------------------------*/
+.search-head {
+    margin-left:184px;
+    width:712px;
+}
 
 .show-grid .site { background: url("http://anmutunddemut.de/wp-content/themes/ada/demo/grid.jpg") repeat scroll 0 0 transparent; }*/

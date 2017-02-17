@@ -16,8 +16,22 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<?php if(get_search_query()!=""){ ?>
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'ada' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<?php }else{?>
+					<h1 class="page-title"><?php printf( esc_html__( 'Search the Site', 'ada' )); ?></h1>
+				<?php } ?>
 			</header><!-- .page-header -->
+
+			<div class="search-head">
+				<?php get_search_form(); ?>
+				<?php if(get_search_query()=="") {
+					print "<p>".__("You haven't searched something yet, so here are the last posts.")."</p>";
+				}?>
+				<hr/>
+			</div>
+
+
 
 			<div class="list-of-teasers rainbow-warrior h-feed">
 			<?php

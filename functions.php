@@ -81,6 +81,8 @@ function ada_setup() {
 endif;
 add_action( 'after_setup_theme', 'ada_setup' );
 
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -89,7 +91,7 @@ add_action( 'after_setup_theme', 'ada_setup' );
  * @global int $content_width
  */
 function ada_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ada_content_width', 1118 );
+	$GLOBALS['content_width'] = apply_filters( 'ada_content_width', 529 );
 }
 add_action( 'after_setup_theme', 'ada_content_width', 0 );
 
@@ -144,6 +146,7 @@ add_action( 'widgets_init', 'ada_widgets_init' );
 function ada_enscripts() {
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'ada-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'ada-rainbow-warrior', get_template_directory_uri() . '/style-rainbow-warrior.css');
 	wp_enqueue_style( 'ada-nano', get_template_directory_uri() . '/style-1-nano.css');
 	wp_enqueue_style( 'ada-micro', get_template_directory_uri() . '/style-2-micro.css', array(), false, "screen and (min-width: 375px)");
 	wp_enqueue_style( 'ada-mili', get_template_directory_uri() . '/style-3-mili.css', array(), false, "screen and (min-width: 601px)");
@@ -205,24 +208,24 @@ function ada_comment($comment, $args, $depth) {
 	
 	<div class="comment-meta">
 		<div class="comment-author vcard">
-			<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-			<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+			<?php if ( $args['avatar_size'] != 0 ) echo "<div class='comment-author-gravatar'>".get_avatar( $comment, $args['avatar_size'] )."</div>"; ?>
+			<?php printf( __( '<cite class="comment-author-name fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
 		</div>
 	<?php if ( $comment->comment_approved == '0' ) : ?>
 		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
 		<br />
 	<?php endif; ?>
 
-		<div class="commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+		<div class="commentmetadata comment-author-date"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 			/* translators: 1: date, 2: time */
 			printf( __('%1$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  | ', '' );
 			?>
 		</div>
 	</div>
-
+	<div class="comment-text">
 	<?php comment_text(); ?>
-
+	</div>
 	<hr/>
 
 	<div class="reply">
@@ -307,21 +310,23 @@ function ada_get_navigation_yearly($first_year, $last_year, $style = "div"){
 	    
     }
     
-     $prefix = array();
+    $prefix = array();
     
     for($i = $start_year; $i<=$last_year; $i++){
 	    
+	    $post_count = ada_get_postcount_by_year($i);	
+	    
+	    // First add empty years
 	    if($i < $first_year){
 		    $prefix[] = '<span class="'.$class.'">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="visibility:hidden;">&nbsp;|&nbsp;</span>';
+	    
 	    }elseif($i ==  get_the_time('Y')){
 		    if($style == "div"){
-				$links[] = '<span class="'.$class.'">'.$i.'</span>';
+				$links[] = '<strong class="'.$class.'" title="'.$post_count.' '.__('posts this year.', 'ada').'">'.$i.'</strong>';
 			}else{
 				$links[] = '<option selected="selected">'.$i.'</option>';
 			}
-		}else{
-			
-			$post_count = ada_get_postcount_by_year($i);		
+		}else{				
 			if($style == "div"){	
 				$links[] = '<a class="'.$class.'" title="'.$post_count.' '.__('posts this year.', 'ada').'" href="'.get_bloginfo('home')."/".$i.'/">'.$i.'</a>';
 			}else{
@@ -387,7 +392,11 @@ function ada_get_navigation_monthly($style = "div"){
 				
 		if(($i == $the_month  and !is_year()) or (ada_get_postcount_by_month($the_year, $number)<1)){
 			if($style=="div"){
-				$links[] = $month_name;
+				if($i == $the_month){
+					$links[] = "<strong title='".$post_count.' '.__('post this month', 'ada')."'>".$month_name."</strong>";
+				}else{
+					$links[] = $month_name;
+				}
 			}elseif($style=="select" and $i == $the_month){
 				$links[] = "<option selected='selected'>".$month_name."</option>";
 			}else{
@@ -445,7 +454,11 @@ function ada_get_navigation_daily($style="div"){
 		
 		if(($i ==  get_the_time('d') and !(is_year() or is_month())) or $post_count<1){
 			if($style=="div"){
-				$links[] = $i;
+				if($i ==  get_the_time('d') and !(is_year() or is_month())){
+					$links[] = "<strong title='".$post_count." ".__('post this day', 'ada')."'>".$i."</strong>";	
+				}else{
+					$links[] = $i;				
+				}
 			}elseif($style=="select" and $i ==  get_the_time('d') and !(is_year() or is_month())){
 				$links[] = "<option selected='selected'>".$i."</option>";
 			}else{

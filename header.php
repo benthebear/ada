@@ -57,14 +57,24 @@
 			<?php
 			endif;
 
+			?>
+
+			<a class="search" href="<?php echo esc_url( home_url( '/' ) ); ?>?s=">&nbsp;</a>
+
+			<?php
+
 			if(is_single()){
 				$navargs = array();
-				$navargs['prev_text'] = "&#171;";
-				$navargs['next_text'] = "&#187;";
+				$navargs['prev_text'] = "<span title='".__("Previous Post", "ada")."'>&#171;</span>";
+				$navargs['next_text'] = "<span title='".__("Next Post", "ada")."'>&#187;</span>";
 				the_post_navigation($navargs);
 			}
 
+
+
 			?>
+
+
 		</div><!-- .site-branding -->
 		
 	</header><!-- #masthead -->

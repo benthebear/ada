@@ -53,6 +53,7 @@ if ( post_password_required() ) {
 					'style'      => 'ol',
 					'short_ping' => true,
 					'callback' => 'ada_comment',
+					'avatar_size' => '102',
 				) );
 			?>
 		</ol><!-- .comment-list -->
