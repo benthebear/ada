@@ -30,6 +30,7 @@ get_header(); ?>
 
 			print '<div class="list-of-teasers rainbow-warrior h-feed">';
 			/* Start the Loop */
+			$counter = 0;
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -37,8 +38,12 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/teaser-big', get_post_format() );
-
+				//if($counter == 0){
+				//	get_template_part( 'template-parts/teaser-illustrated', get_post_format() );
+				//}else{
+					get_template_part( 'template-parts/teaser-big', get_post_format() );
+				//}
+				$counter ++;
 			endwhile;
 
 			print "</div><!-- /.list-of-teasers-->\n\n";

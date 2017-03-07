@@ -21,7 +21,7 @@ function ada_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'ada' ),
+		esc_html_x( '%s', 'post date', 'ada' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 

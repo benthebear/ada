@@ -65,10 +65,9 @@ hr:before{
 
 .teaser .thumbnail img{
 	border:1px solid gray;
-	border-radius: 0px;
 }
 
-.teaser-big .entry-meta-item {
+.teaser .entry-meta-item {
 	display:none;
 }
 
@@ -79,6 +78,14 @@ hr:before{
 
 .teaser-big .teaser-text {
 	min-height:100px; 
+}
+
+/*--------------------------------------------------------------
+# Teaser Big
+--------------------------------------------------------------*/
+
+.teaser-illustrated .thumbnail {
+	max-width:100%;
 }
 
 
@@ -109,7 +116,17 @@ hr:before{
 .singular .comment-list {
 	max-width: 26.5em;
 	margin:auto;
+	padding-left:0px;
 }
+
+.singular .content-full .entry-content h3 {
+	font-size: 140%;
+}
+
+.singular .content-full .entry-content h4 {
+	font-size: 130%;
+}
+
 
 /*--------------------------------------------------------------
 # Repeating Visual Patterns 

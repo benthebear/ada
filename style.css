@@ -109,7 +109,7 @@ ul, ol, dd{
 	padding-left:2em;
 }
 
-h2, h3, p, ul, ol, dl, table, pre, iframe {
+h2, h3, h4, h5, h6, p, ul, ol, dl, table, pre, iframe {
 	margin-bottom:2em;	
 }
 
@@ -373,6 +373,10 @@ h, heading, h1, h2, h3, h4, h5, h5 {
 	
 }
 
+.page-title {
+	font-size:150%;
+}
+
 h1.page-title, h2 {
 	/*
 	font-family: Verdana, sans-serif;
@@ -603,7 +607,6 @@ hr {
 .search-head .search-field{
 	width:64%;
 	border:1px solid black;
-	border-radius: 3px;
 	padding: 5px;
 }
 
@@ -614,7 +617,6 @@ hr {
 	border-width: 1px;
 	border-color: black;
 	background: white;
-	border-radius: 3px;
 	padding: 5px 15px;
 }
 
@@ -634,12 +636,22 @@ hr {
 
 
 /*--------------------------------------------------------------
-## @Teaser Big
+## Basic Teaser
+--------------------------------------------------------------*/
+
+
+.teaser {
+	clear:both;
+}
+
+
+/*--------------------------------------------------------------
+## Teaser Big
 --------------------------------------------------------------*/
 
 
 .teaser-big {
-	clear:both;
+	
 }
 
 .teaser-big .contrast {
@@ -648,10 +660,45 @@ hr {
 
 
 /*--------------------------------------------------------------
+## Teaser List
+--------------------------------------------------------------*/
+
+.teaser-list {
+	
+}
+
+/*--------------------------------------------------------------
+## Teaser Illustrated
+--------------------------------------------------------------*/
+
+.teaser-illustrated {
+	
+}
+
+.teaser-illustrated .entry-title{
+	position: relative;
+	top: -232px;
+	background: white;
+	margin: 0 6%;
+	padding: 6% 4%;
+	width: 80%;
+	clear: both;
+}
+
+.teaser-illustrated .thumbnail,
+.teaser-illustrated .thumbnail img {
+	width:100%;
+	max-width: 100%;
+	float: none;
+}
+
+/*--------------------------------------------------------------
 # Archives
 --------------------------------------------------------------*/
 
-
+.archive.date .page-header {
+	margin-bottom: 2em;
+}
 
 /*--------------------------------------------------------------
 # Singulars, Single, Posts, Pages
@@ -727,7 +774,6 @@ input[type="submit"],
 textarea {
 	border-width: 1px;
 	border-style: solid;
-	border-radius: 3px;
 }
 
 .says {
@@ -778,7 +824,6 @@ textarea {
 
 .clickme a {
 	border:1px outset;
-	border-radius: 3px;
 	padding:8px 15px 5px 15px;
 	white-space: nowrap;
 }

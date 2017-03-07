@@ -22,7 +22,6 @@ body {
 .site {
 	width:1120px;
 	border:1px solid black;
-	border-radius:3px;
 	margin-top:20px;
 }
 
@@ -197,6 +196,23 @@ hr:before{
 	text-decoration:none;
 }
 
+
+
+/*--------------------------------------------------------------
+## Teaser Illustrated
+--------------------------------------------------------------*/
+
+.teaser-illustrated {
+	max-width: 712px;
+	margin:auto;
+}
+
+.teaser-illustrated .thumbnail,
+.teaser-illustrated .entry-title {
+	max-width: 529px;
+	margin:auto;
+	float: none;
+}
 
 /*--------------------------------------------------------------
 # Archives
