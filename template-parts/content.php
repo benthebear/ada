@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php
 			
-			print ada_add_constant_contrast(the_title( '<h2 class="entry-title p-name"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="u-uid u-url">', '</a></h2>', false ));
+			print the_title( '<h2 class="entry-title p-name"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="u-uid u-url">', '</a></h2>', true );
 		
 			if(has_post_thumbnail()){
 				print "<p class='teaserimage'>";

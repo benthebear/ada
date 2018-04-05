@@ -59,8 +59,8 @@
 
 			?>
 
-			<a class="search" href="<?php echo esc_url( home_url( '/' ) ); ?>?s=">&nbsp;</a>
-
+			<span class="site-navigation">
+						
 			<?php
 
 			if(is_single()){
@@ -68,14 +68,23 @@
 				$navargs['prev_text'] = "<span title='".__("Previous Post", "ada")."'>&#171;</span>";
 				$navargs['next_text'] = "<span title='".__("Next Post", "ada")."'>&#187;</span>";
 				the_post_navigation($navargs);
-			}
-
-
+			}		
 
 			?>
-
+				<!-- <a class="search" href="<?php echo esc_url( home_url( '/' ) ); ?>?s=">&nbsp;</a> -->
+				<a class="button button-menu button-menu-open" href="#show__menu"><span class="dashicons dashicons-menu"></span></a>
+			</span>	
 
 		</div><!-- .site-branding -->
+		
+		
+		<aside id="show__menu" class="widget-area widget-area-menu" role="complementary">
+			<div class="widget-area-menu-inner">
+			<a class="button button-menu button-menu-close" href="#"><span class="dashicons dashicons-no"></span></a>
+			<?php dynamic_sidebar( 'themenu' ); ?>
+			</div>
+		</aside>
+		
 		
 	</header><!-- #masthead -->
 

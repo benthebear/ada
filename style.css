@@ -493,7 +493,6 @@ hr {
 	padding-left:20px;
 	padding-right:20px;
 	padding-bottom:4px;
-	font-size:16px;
 }
 
 .site-header a {
@@ -520,11 +519,10 @@ hr {
 }
 
 .site-header .post-navigation {
-	float:right;
 }
 
 .site-header .nav-links {
-    font-size:20px;
+    font-size:32px;
 }
 
 .site-header .nav-previous {
@@ -536,7 +534,6 @@ hr {
 }
 
 .site-header .search {
-	float:right;
     text-decoration: none;
 }
 
@@ -546,6 +543,10 @@ hr {
 	color:white;
     top:4px;
     position:relative;
+}
+
+.site-navigation {
+	float:right;
 }
 
 
@@ -618,6 +619,30 @@ hr {
 	border-color: black;
 	background: white;
 	padding: 5px 15px;
+}
+
+
+.widget_links {
+	
+}
+
+.widget_links ul{
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+
+.widget_links li {
+	display: inline-block;
+	margin-right: 0.2em;
+}
+
+.widget_links li::after{
+	content: " / ";
+}
+
+.widget_links li::last-child::after{
+	content: " / ";
 }
 
 /*--------------------------------------------------------------
@@ -862,5 +887,80 @@ textarea {
 
 
 
+/*--------------------------------------------------------------
+## Menue
+--------------------------------------------------------------*/
 
+.site-branding {
+	line-height: 250%;
+}
+
+.widget-area-menu {
+	background: transparent;
+	display:none;
+	
+}
+
+.widget-area-menu:target {	
+	display:block;
+	padding-top: 55px;
+	margin-top: -50px;
+	border:0px;
+}
+
+.admin-bar .widget-area-menu:target {		
+	padding-top: 105px;
+	margin-top: -95px;
+}
+
+
+.widget-area-menu:active,
+.widget-area-menu:focus {
+	border:0px;
+	outline-width:0px;
+}
+
+.widget-area-menu-inner {
+	border-top: 1px solid white;
+	padding-top: 20px;
+}
+
+.button-menu-open,
+.button-menu-open:hover,
+.button-menu-open:active {
+	display: inline;
+	text-decoration: none;
+	padding-right: 0.2em;
+}
+
+.button-menu-close,
+.button-menu-close:hover,
+.button-menu-close:active {
+	float:right;
+	text-decoration: none;
+	padding-right: 0.2em;
+}
+
+.button-menu .dashicons {
+	font-size: 35px;
+	position: relative;
+	top:3px;
+}
+
+
+.widget-area-menu input {
+	color:black;
+}
+
+.widget-area-menu .widget {
+	float:left;
+	clear: none;
+	margin-right: 40px;
+}
+
+
+.widget-area-menu .sub-menu,
+.widget-area-menu .children {
+	display: none;
+}
 

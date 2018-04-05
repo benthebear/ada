@@ -137,12 +137,18 @@ add_action( 'save_post',     'ada_category_transient_flusher' );
 
 function ada_teaser_text($content){
 	
-	if(strlen($content)>250 and !(strpos($content, "more-link"))){
-		  $content = strip_tags($content);
-		  $first_sentence = strpos($content, ". ");
-		  $second_sentence = strpos($content, ". ", $first_sentence+1);
-		  $content = substr($content, 0, $second_sentence+1);
-		  $content = "<p>".$content." <a href='".get_permalink()."'>".__( '… read more &#187;', 'ada' )."</a></p>";
+	if(strlen($content)>250 and !(strpos($content, "more-link"))){		  
+		  $content = strip_tags($content, "<a><del><em><strong><i><b><img>");
+		  $teaser = $content;
+		  $first_sentence = mb_strpos($content, ". ");
+		  if($first_sentence){
+		  	$second_sentence = mb_strpos($content, ". ", $first_sentence+1);
+		  	$teaser = mb_substr($content, 0, $first_sentence+1);
+		  	if($second_sentence){
+		  		$teaser = mb_substr($content, 0, $second_sentence+1);
+		  	}
+		  }
+		  $content = "<p>".$teaser." <a href='".get_permalink()."'>".__( '… read more &#187;', 'ada' )."</a></p>";
 	}
 	
 	print $content;

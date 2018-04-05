@@ -102,6 +102,15 @@ add_action( 'after_setup_theme', 'ada_content_width', 0 );
  */
 function ada_widgets_init() {
 	register_sidebar( array(
+        'id'          => 'themenu',
+        'name'        => __( 'Menu', $text_domain ),
+        'description' => __( 'The Menu of the Site - on every Page', 'ada' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+	register_sidebar( array(
         'id'          => 'homepage',
         'name'        => __( 'Homepage', 'ada' ),
         'description' => __( 'The lower Part of the Homepage', 'ada' ),
@@ -137,6 +146,7 @@ function ada_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
     ) );
+    
 }
 add_action( 'widgets_init', 'ada_widgets_init' );
 

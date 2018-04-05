@@ -50,8 +50,8 @@ hr:before{
 }
 
 .teaser .thumbnail {
-	float:left;
-	margin-right: 20px;
+	float:right;
+	margin-left: 20px;
 	max-width:37%;
 }
 
@@ -117,6 +117,13 @@ hr:before{
 	max-width: 26.5em;
 	margin:auto;
 	padding-left:0px;
+}
+
+.singular .content-full .entry-content h2, 
+.singular .content-full .entry-content h3,
+.singular .content-full .entry-content h4, 
+.singular .content-full .entry-content h5 {
+	margin-top: 4em;
 }
 
 .singular .content-full .entry-content h3 {

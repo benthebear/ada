@@ -42,6 +42,18 @@ hr:before{
 	margin-right:20px;
 }
 
+.site-branding {
+	line-height: 140%;
+}
+
+.button-menu .dashicons {
+	font-size: 27px;
+	top:-1px;
+}
+
+.site-header .nav-links {
+    font-size:20px;
+}
 
 /*--------------------------------------------------------------
 # Teasers
@@ -122,8 +134,8 @@ hr:before{
 }
 
 .teaser-big .teaserimage {
-	float:left;
-	margin-right:20px;
+	float:right;
+	margin-left:20px;
 }
 
 .teaser-big .teaserimage img {
@@ -139,7 +151,7 @@ hr:before{
 }
 
 .teaser-big.has-post-thumbnail .teaser-text {
-	margin-left:184px;
+	max-width: 529px;
 }
 
 .teaser-big .entry-meta-item {
@@ -147,7 +159,7 @@ hr:before{
 }
 
 .teaser-big.has-post-thumbnail .entry-meta-item {
-	margin-left:184px;
+
 }
 
 .read-status {
@@ -215,6 +227,50 @@ hr:before{
 }
 
 /*--------------------------------------------------------------
+## Teaser Contrast
+--------------------------------------------------------------*/
+.teaser-contrast {
+	max-width: 346px;
+	float:left;
+	clear:none;
+	margin-right:20px;
+	margin-bottom: 20px;
+}
+
+.teaser-contrast .teaserimage,
+.teaser-contrast .entry-title {
+	width: 163px;
+	float: left;
+	text-align: left;
+}
+
+.teaser-contrast .teaserimage {
+	
+}
+
+.teaser-contrast .teaserimage img {
+    width: 161px;
+    height:161px;
+    border: 1px solid #808080;
+	max-width: 98%;
+}
+
+.teaser-contrast p.teaserimage {
+	margin-bottom:0px;
+}
+
+.teaser-contrast .entry-title {
+	margin-left:20px;
+	font-size: 18px;
+	hyphens: auto;
+	padding-top:1em;
+}
+
+.teaser-contrast:nth-child(3n+3) {
+	margin-right:0px;	
+}
+
+/*--------------------------------------------------------------
 # Archives
 --------------------------------------------------------------*/
 
@@ -274,13 +330,20 @@ hr:before{
 
 }
 
-.singular .content-full .teaserimage,
+.singular .content-full .teaserimage {
+	float:right;
+	max-width: 286px;	
+    position: relative;
+    top:-60px;
+    right: 0px;
+}
+
 .archive .taxonomy-description .teaserimage {
 	float:right;
 	max-width: 286px;	
     position: absolute;
-    top: 60px;
     right: 20px;
+
 }
 
 /*--------------------------------------------------------------
@@ -389,7 +452,7 @@ hr:before{
 	float:left;
 }
 
-.topics > *:nth-child(1) {
+.topics > *:nth-child(odd) {
 	margin-right:20px;
 }
 
