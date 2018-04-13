@@ -369,21 +369,17 @@ html, body, textarea {
 
 h, heading, h1, h2, h3, h4, h5, h5 {
 	font-weight:normal;
-	line-height: 120%;
-	
+	line-height: 120%;	
 }
 
 .page-title {
 	font-size:150%;
 }
 
-h1.page-title, h2 {
-	/*
-	font-family: Verdana, sans-serif;
-	letter-spacing:-2px;
-	font-weight: 900;
-	*/
-	
+h1.page-title, h1.entry-title, h2 {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-size:200%;
+	font-weight:200;	
 }
 
 h1.page-title a, h2 a{
@@ -400,17 +396,6 @@ img {
 	height: auto;
 }
 
-
-hr:before{
-	content: "\f487";
-	color: firebrick;
-	background: white;
-	position: relative;
-	top: -9px;
-	left: 41%;
-	padding: 0px 20px 0px 20px;
-	font: 400 12px/1 dashicons !important;
-}
 
 hr {
 	border-color: black;
@@ -646,6 +631,16 @@ hr {
 }
 
 /*--------------------------------------------------------------
+# General Post Elements. For all Post Types. Everywhere
+--------------------------------------------------------------*/
+
+
+.entry-meta-item {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-weight:200;
+}
+
+/*--------------------------------------------------------------
 # Teasers
 --------------------------------------------------------------*/
 
@@ -836,11 +831,8 @@ textarea {
 
 .clickme {
 	line-height: 250%;
-	/*
-	font-family: Verdana, sans-serif;
-	letter-spacing:-1px;
-	font-weight: 900;
-	*/
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-weight:200;	
 }
 
 .clickme a:before {
@@ -848,25 +840,29 @@ textarea {
 }
 
 .clickme a {
-	border:1px outset;
-	padding:8px 15px 5px 15px;
+	/* border:1px outset;
+	padding:8px 15px 5px 15px; */
 	white-space: nowrap;
 }
 
 .clickme a {
-	color:blue;
-	border-color:blue;
+	/* color:blue; */
+	/* border-color:blue; */
 }
 
 .clickme a:visited {
+	/*
 	color:purple;
 	border-color: purple;
+	*/
 }
 
 .clickme a:hover {
+	/*
 	text-decoration: none;
 	background-color:#eee;
 	border-color:gray;
+	*/
 	color:black;
 }
 

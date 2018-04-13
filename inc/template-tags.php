@@ -50,13 +50,16 @@ function ada_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories = get_the_category();
 		if ( $categories && ada_categorized_blog() ) {
-			$separator = ' ';
+			$separator = '';
 			$output = '';
 			if ( ! empty( $categories ) ) {
 				$output .= '<div class="entry-meta-item cat-links clickme rainbow-warrior">'; 
+				$output .= __("Categories", "ada").": ";
+				$cats = array();
 			    foreach( $categories as $category ) {
-			        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category">' . esc_html( $category->name ) . '</a>' . $separator;
+			        $cats[] = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category">' . esc_html( $category->name ) . '</a>' . $separator;
 			    }
+			    $output .= implode(" :: ", $cats);
 			    $output .= '</div>';
 			    echo trim( $output, $separator );
 			}
@@ -64,13 +67,16 @@ function ada_entry_footer() {
 		
 		$tags = get_the_tags();
 		if ( $tags ) {
-			$separator = ' ';
+			$separator = '';
 			$output = '';
 			if ( ! empty( $tags ) ) {
 				$output .= '<div class="entry-meta-item tags-links clickme rainbow-warrior">'; 
+				$output .= __("Tags", "ada").": ";
+				$dogs = array();
 			    foreach( $tags as $tag ) {
-			        $output .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category">' . esc_html( $tag->name ) . '</a>' . $separator;
+			        $dogs[] = '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'ada' ), $category->name ) ) . '" class="p-category">' . esc_html( $tag->name ) . '</a>' . $separator;
 			    }
+			    $output .= implode(" :: ", $dogs);
 			    $output .= '</div>';
 			    echo trim( $output, $separator );
 			}
