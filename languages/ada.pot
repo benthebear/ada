@@ -1,225 +1,296 @@
-# Copyright (C) 2015 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-09-16 19:02:07+00:00\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Ada\n"
+"POT-Creation-Date: 2018-04-16 13:54+0200\n"
+"PO-Revision-Date: 2018-04-16 13:54+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:17
-#@ _s
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:21
-#@ _s
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#: 404.php:29
-#@ _s
+#: 404.php:33
 msgid "Most Used Categories"
 msgstr ""
 
-#. translators: %1$s: smiley
-#: 404.php:46
+#: 404.php:51
 #, php-format
-#@ _s
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: comments.php:31
 #, php-format
-#@ _s
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Commment"
+msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40
-#: comments.php:61
-#@ _s
+#: comments.php:40 comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43
-#: comments.php:64
-#@ _s
+#: comments.php:43 comments.php:66
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44
-#: comments.php:65
-#@ _s
+#: comments.php:44 comments.php:67
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:77
-#@ _s
+#: comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:18
-#@ _s
+#: footer.php:26
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:18
+#: footer.php:26
 #, php-format
-#@ _s
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:20
+#: footer.php:27
+msgid "since"
+msgstr ""
+
+#: footer.php:28
+msgid "Visit the archive!"
+msgstr ""
+
+#: footer.php:30
 #, php-format
-#@ _s
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:47
-#@ _s
-msgid "Primary"
+#: functions.php:106
+msgid "Menu"
 msgstr ""
 
-#: functions.php:102
-#@ _s
-msgid "Sidebar"
+#: functions.php:107
+msgid "The Menu of the Site - on every Page"
 msgstr ""
 
-#: header.php:25
-#@ _s
+#: functions.php:115
+msgid "Homepage"
+msgstr ""
+
+#: functions.php:116
+msgid "The lower Part of the Homepage"
+msgstr ""
+
+#: functions.php:124
+msgid "Footer"
+msgstr ""
+
+#: functions.php:125
+msgid "The Footer of Site - on every Page"
+msgstr ""
+
+#: functions.php:133
+msgid "Article"
+msgstr ""
+
+#: functions.php:134
+msgid "The lower Part of Posts of all Types"
+msgstr ""
+
+#: functions.php:142
+msgid "Archives"
+msgstr ""
+
+#: functions.php:143
+msgid "The lower Part of Archices of all Types"
+msgstr ""
+
+#: functions.php:222
+#, php-format
+msgid ""
+"<cite class=\"comment-author-name fn\">%s</cite> <span class=\"says\">says:</"
+"span>"
+msgstr ""
+
+#: functions.php:225
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:232
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:232
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:307
+msgid "Year"
+msgstr ""
+
+#: functions.php:335 functions.php:341
+msgid "posts this year."
+msgstr ""
+
+#: functions.php:387
+msgid "Month"
+msgstr ""
+
+#: functions.php:406 functions.php:417
+msgid "post this month"
+msgstr ""
+
+#: functions.php:446
+msgid "Day"
+msgstr ""
+
+#: functions.php:468 functions.php:479
+msgid "post this day"
+msgstr ""
+
+#: header.php:41
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:38
-#@ _s
-msgid "Primary Menu"
+#: header.php:68
+msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:28
+#: header.php:69
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:24
 #, php-format
-#@ _s
 msgctxt "post date"
-msgid "Posted on %s"
+msgid "%s"
 msgstr ""
 
-#: inc/template-tags.php:33
+#: inc/template-tags.php:29
 #, php-format
-#@ _s
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:50
-#: inc/template-tags.php:56
-#@ _s
-msgid ", "
+#: inc/template-tags.php:57
+msgid "Categories"
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:60 inc/template-tags.php:77
 #, php-format
-#@ _s
-msgid "Posted in %1$s"
+msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:58
-#, php-format
-#@ _s
-msgid "Tagged %1$s"
+#: inc/template-tags.php:74
+msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:64
-#@ _s
+#: inc/template-tags.php:95
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:64
-#@ _s
+#: inc/template-tags.php:95
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:64
-#, php-format
-#@ _s
+#: inc/template-tags.php:95
 msgid "% Comments"
 msgstr ""
 
-#. translators: %s: Name of current post
-#: inc/template-tags.php:71
-#: template-parts/content-page.php:32
-#, php-format
-#@ _s
-msgid "Edit %s"
+#: inc/template-tags.php:169
+msgid "… read more &#187;"
 msgstr ""
 
-#: search.php:18
+#: search.php:20
 #, php-format
-#@ _s
 msgid "Search Results for: %s"
 msgstr ""
 
+#: search.php:22
+msgid "Search the Site"
+msgstr ""
+
+#: search.php:29
+msgid "You haven't searched something yet, so here are the last posts."
+msgstr ""
+
 #: template-parts/content-none.php:14
-#@ _s
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content-none.php:21
 #, php-format
-#@ _s
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
-#@ _s
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
-#@ _s
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21
-#: template-parts/content-single.php:25
-#: template-parts/content.php:34
-#@ _s
+#: template-parts/content-page.php:29 template-parts/content.php:36
+#: template-parts/teaser-big.php:41 template-parts/teaser-illustrated.php:41
+#: template-parts/teaser.php:44
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post.
-#: template-parts/content.php:27
+#: template-parts/content-page.php:40
 #, php-format
-#@ _s
+msgid "Edit %s"
+msgstr ""
+
+#: template-parts/content.php:31 template-parts/teaser.php:39
+#, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
+
 #. Theme Name of the plugin/theme
-msgid "_s"
+msgid "Ada"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-#@ _s
 msgid "http://underscores.me/"
 msgstr ""
 
 #. Description of the plugin/theme
-#@ _s
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
+msgid ""
+"A one column, minimalistic and elegant Theme named after the most elegant "
+"Ada Lovelace"
 msgstr ""
 
 #. Author of the plugin/theme
-#@ _s
-msgid "Automattic"
+msgid "Benjamin Birkenhake"
 msgstr ""
 
 #. Author URI of the plugin/theme
-#@ _s
-msgid "http://automattic.com/"
+msgid "http://birkenhake.org"
 msgstr ""
