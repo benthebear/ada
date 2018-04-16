@@ -314,6 +314,10 @@ hr:before{
 	padding-left:0;
 }
 
+.singular .content-area-broadside .content-full .entry-content {
+	margin-left:0px;
+}
+
 .singular .content-full .entry-content {
 	min-height:300px;
 	margin-bottom:3em;

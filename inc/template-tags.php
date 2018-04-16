@@ -140,6 +140,10 @@ function ada_category_transient_flusher() {
 add_action( 'edit_category', 'ada_category_transient_flusher' );
 add_action( 'save_post',     'ada_category_transient_flusher' );
 
+function ada_modify_read_more_link() {
+    return ada_get_readmore_link();
+}
+add_filter( 'the_content_more_link', 'ada_modify_read_more_link' );
 
 function ada_teaser_text($content){
 	
@@ -154,11 +158,15 @@ function ada_teaser_text($content){
 		  		$teaser = mb_substr($content, 0, $second_sentence+1);
 		  	}
 		  }
-		  $content = "<p>".$teaser." <a href='".get_permalink()."'>".__( '… read more &#187;', 'ada' )."</a></p>";
+		  $content = "<p>".$teaser." </p>".ada_get_readmore_link();
 	}
 	
 	print $content;
 	
+}
+
+function ada_get_readmore_link(){
+	return " <a href='".get_permalink()."'>".__( '… read more &#187;', 'ada' )."</a>";
 }
 
 function ada_add_random_variant($string){
